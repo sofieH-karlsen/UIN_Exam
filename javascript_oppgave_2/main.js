@@ -41,12 +41,12 @@ const thirdSpan = document.querySelector("ul li:nth-of-type(3) span");
 const forthSpan = document.querySelector("ul li:nth-of-type(4) span");
 
 //ID-ing input-elements value
-const nr1Input = document.querySelector("input").value;
-const nr2Input = document.querySelector("ul li:nth-of-type(2) input").value;
-const nr3Input = document.querySelector("ul li:nth-of-type(3) input").value;
-const nr4Input = document.querySelector("ul li:nth-of-type(4) input").value;
+const nr1Input = document.querySelector("input");
+const nr2Input = document.querySelector("ul li:nth-of-type(2) input");
+const nr3Input = document.querySelector("ul li:nth-of-type(3) input");
+const nr4Input = document.querySelector("ul li:nth-of-type(4) input");
 
-console.log(nr2Input);
+const btn = document.getElementById("test")
 
 const writeWords = () => {
   //Math.floor(Math.random() * (max - min) ) + min
@@ -60,15 +60,29 @@ const writeWords = () => {
     wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
 };
 
-writeWords();
+const emptyInput = () => {
+  nr1Input.value=nr2Input.value=nr3Input.value=nr4Input.value = "";
+};
 
-if (
-  firstSpan.innerHTML === secondSpan.innerHTML ||
-  firstSpan.innerHTML === thirdSpan.innerHTML ||
-  firstSpan.innerHTML === forthSpan.innerHTML ||
-  secondSpan.innerHTML === thirdSpan.innerHTML ||
-  secondSpan.innerHTML === forthSpan.innerHTML ||
-  thirdSpan.innerHTML === forthSpan.innerHTML
-) {
+const StartGame = () => {
+  emptyInput();
   writeWords();
-}
+
+  if (
+    firstSpan.innerHTML === secondSpan.innerHTML ||
+    firstSpan.innerHTML === thirdSpan.innerHTML ||
+    firstSpan.innerHTML === forthSpan.innerHTML ||
+    secondSpan.innerHTML === thirdSpan.innerHTML ||
+    secondSpan.innerHTML === forthSpan.innerHTML ||
+    thirdSpan.innerHTML === forthSpan.innerHTML
+  ) {
+    writeWords();
+  }
+};
+
+StartGame();
+
+btn.addEventListener('click', (event) => {
+  StartGame();
+});
+
