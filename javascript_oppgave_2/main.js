@@ -40,6 +40,14 @@ const secondSpan = document.querySelector("ul li:nth-of-type(2) span");
 const thirdSpan = document.querySelector("ul li:nth-of-type(3) span");
 const forthSpan = document.querySelector("ul li:nth-of-type(4) span");
 
+//ID-ing input-elements value
+const nr1Input = document.querySelector("input").value;
+const nr2Input = document.querySelector("ul li:nth-of-type(2) input").value;
+const nr3Input = document.querySelector("ul li:nth-of-type(3) input").value;
+const nr4Input = document.querySelector("ul li:nth-of-type(4) input").value;
+
+console.log(nr2Input);
+
 const writeWords = () => {
   //Math.floor(Math.random() * (max - min) ) + min
   firstSpan.innerHTML =
@@ -52,7 +60,7 @@ const writeWords = () => {
     wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
 };
 
-writeWords()
+writeWords();
 
 if (
   firstSpan.innerHTML === secondSpan.innerHTML ||
@@ -62,6 +70,5 @@ if (
   secondSpan.innerHTML === forthSpan.innerHTML ||
   thirdSpan.innerHTML === forthSpan.innerHTML
 ) {
-  writeWords()
+  writeWords();
 }
-
