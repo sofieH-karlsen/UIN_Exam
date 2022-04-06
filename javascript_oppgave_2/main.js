@@ -35,54 +35,53 @@ const wordList = [
 
 // #### START HER ####
 //Got id-ing all the span elements WITHOUT using ID (inspo: https://bobbyhadz.com/blog/javascript-get-nth-element-of-type)
-const firstSpan = document.querySelector("span");
-const secondSpan = document.querySelector("ul li:nth-of-type(2) span");
-const thirdSpan = document.querySelector("ul li:nth-of-type(3) span");
-const forthSpan = document.querySelector("ul li:nth-of-type(4) span");
+const span1 = document.querySelector("span");
+const span2 = document.querySelector("ul li:nth-of-type(2) span");
+const span3 = document.querySelector("ul li:nth-of-type(3) span");
+const span4 = document.querySelector("ul li:nth-of-type(4) span");
 
 //ID-ing input-elements value
-const nr1Input = document.querySelector("input");
-const nr2Input = document.querySelector("ul li:nth-of-type(2) input");
-const nr3Input = document.querySelector("ul li:nth-of-type(3) input");
-const nr4Input = document.querySelector("ul li:nth-of-type(4) input");
+const input1 = document.querySelector("input");
+const input2 = document.querySelector("ul li:nth-of-type(2) input");
+const input3 = document.querySelector("ul li:nth-of-type(3) input");
+const input4 = document.querySelector("ul li:nth-of-type(4) input");
 
-const btn = document.getElementById("test")
+const btn = document.getElementById("test");
 
 const writeWords = () => {
   //Math.floor(Math.random() * (max - min) ) + min
-  firstSpan.innerHTML =
-    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  secondSpan.innerHTML =
-    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  thirdSpan.innerHTML =
-    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  forthSpan.innerHTML =
-    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span1.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span2.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span3.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span4.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
 };
 
 const emptyInput = () => {
-  nr1Input.value=nr2Input.value=nr3Input.value=nr4Input.value = "";
+  input1.value = input2.value = input3.value = input4.value = "";
 };
 
 const StartGame = () => {
   emptyInput();
   writeWords();
-
-  if (
-    firstSpan.innerHTML === secondSpan.innerHTML ||
-    firstSpan.innerHTML === thirdSpan.innerHTML ||
-    firstSpan.innerHTML === forthSpan.innerHTML ||
-    secondSpan.innerHTML === thirdSpan.innerHTML ||
-    secondSpan.innerHTML === forthSpan.innerHTML ||
-    thirdSpan.innerHTML === forthSpan.innerHTML
-  ) {
-    writeWords();
+  let diffWords = false;
+  while (diffWords == false) {
+    if (
+      span1.innerHTML != span2.innerHTML &&
+      span1.innerHTML != span3.innerHTML &&
+      span1.innerHTML != span4.innerHTML &&
+      span2.innerHTML != span3.innerHTML &&
+      span2.innerHTML != span4.innerHTML &&
+      span3.innerHTML != span4.innerHTML
+    ) {
+      diffWords = true;
+    } else {
+      writeWords();
+    }
   }
 };
 
 StartGame();
 
-btn.addEventListener('click', (event) => {
+btn.addEventListener("click", (event) => {
   StartGame();
 });
-
