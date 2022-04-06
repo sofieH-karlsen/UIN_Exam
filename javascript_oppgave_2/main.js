@@ -63,6 +63,8 @@ const emptyInput = () => {
 const StartGame = () => {
   emptyInput();
   writeWords();
+
+  //Inspo: https://stackoverflow.com/questions/32029881/javascript-keep-testing-until-true
   let diffWords = false;
   while (diffWords == false) {
     if (
