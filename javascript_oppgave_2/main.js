@@ -80,8 +80,11 @@ const StartGame = () => {
   }
 };
 
+//TODO: Lage sjekken for om man er riktig
+
 StartGame();
 
+//TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
 btn.addEventListener("click", (event) => {
   StartGame();
 });
