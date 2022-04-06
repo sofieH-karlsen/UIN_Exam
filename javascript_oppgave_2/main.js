@@ -34,6 +34,34 @@ const wordList = [
 ];
 
 // #### START HER ####
-const startHere = "Her kommer din kode";
+//Got id-ing all the span elements WITHOUT using ID (inspo: https://bobbyhadz.com/blog/javascript-get-nth-element-of-type)
+const firstSpan = document.querySelector("span");
+const secondSpan = document.querySelector("ul li:nth-of-type(2) span");
+const thirdSpan = document.querySelector("ul li:nth-of-type(3) span");
+const forthSpan = document.querySelector("ul li:nth-of-type(4) span");
 
-Math.floor(Math.random() * (wordList.length - min) ) + min
+const writeWords = () => {
+  //Math.floor(Math.random() * (max - min) ) + min
+  firstSpan.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  secondSpan.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  thirdSpan.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  forthSpan.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+};
+
+writeWords()
+
+if (
+  firstSpan.innerHTML === secondSpan.innerHTML ||
+  firstSpan.innerHTML === thirdSpan.innerHTML ||
+  firstSpan.innerHTML === forthSpan.innerHTML ||
+  secondSpan.innerHTML === thirdSpan.innerHTML ||
+  secondSpan.innerHTML === forthSpan.innerHTML ||
+  thirdSpan.innerHTML === forthSpan.innerHTML
+) {
+  writeWords()
+}
+
