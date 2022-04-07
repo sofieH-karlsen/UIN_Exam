@@ -99,9 +99,22 @@ const StartGame = () => {
   uniqueWords();
 };
 
-StartGame();
-
 //TODO: Lage sjekken for om man er riktig
+const checkIfRight = () => {
+  const sortedWords = chosenWords.sort();
+  console.log(sortedWords);
+  if (
+    sortedWords.indexOf(span1.innerHTML) + 1 == input1.value &&
+    sortedWords.indexOf(span2.innerHTML) + 1 == input2.value &&
+    sortedWords.indexOf(span3.innerHTML) + 1 == input3.value &&
+    sortedWords.indexOf(span4.innerHTML) + 1 == input4.value
+  ) {
+    console.log("YAAAAAAAYYYY");
+  } /*input feil*/ else {
+    console.log("æææææææææææææ");
+  }
+};
+
 const validInput = () => {
   if (
     input1.value - 4 <= 0 &&
@@ -121,7 +134,7 @@ const validInput = () => {
       input2.value != input4.value &&
       input3.value != input4.value
     ) {
-      console.log("YAY");
+      checkIfRight();
     } else {
       console.log("invalid input");
     }
@@ -130,12 +143,7 @@ const validInput = () => {
   }
 };
 
-// const checkIfRight =()=>{
-//   if(/*Input riktig */){
-
-//   } else /*input feil*/{}
-// }
-
+StartGame();
 //TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
 btn.addEventListener("click", (event) => {
   validInput();
