@@ -113,9 +113,21 @@ const validInput = () => {
     input3.value - 4 >= -3 &&
     input4.value - 4 >= -3
   ) {
-    console.log("YAY");
+    if (
+      input1.value != input2.value &&
+      input1.value != input3.value &&
+      input1.value != input4.value &&
+      input2.value != input3.value &&
+      input2.value != input4.value &&
+      input3.value != input4.value
+    ) {
+      console.log("YAY");
+    } else {
+      console.log("invalid input");
+    }
+  } else {
+    console.log("invalid input");
   }
-
 };
 
 // const checkIfRight =()=>{
@@ -126,8 +138,6 @@ const validInput = () => {
 
 //TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
 btn.addEventListener("click", (event) => {
-  console.log(input1.value);
-  console.log(chosenWords);
   validInput();
   //StartGame();
 });
