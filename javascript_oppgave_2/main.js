@@ -4,6 +4,7 @@ const failColor = "rgb(226, 101, 91)";
 const correctColor = "rgb(25, 232, 168)";
 const failText = "Feil";
 const correctText = "Ny runde";
+const invalidText = "Invalid input";
 
 const wordList = [
   "Huske",
@@ -89,29 +90,33 @@ const uniqueWords = () => {
 
 const emptyInput = () => {
   input1.value = input2.value = input3.value = input4.value = "";
-  chosenWords.splice(0,4)
+  chosenWords.splice(0, 4);
 };
 
 const StartGame = () => {
   emptyInput();
   writeWords();
   uniqueWords();
-  console.log(chosenWords)
 };
 
 StartGame();
 
-// //TODO: Lage sjekken for om man er riktig
-// const validInput = () => {
-//   if(/*Mangler input*/){
+//TODO: Lage sjekken for om man er riktig
+const validInput = () => {
+  if (
+    input1.value - 4 <= 0 &&
+    input2.value - 4 <= 0 &&
+    input3.value - 4 <= 0 &&
+    input4.value - 4 <= 0 &&
+    input1.value - 4 >= -3 &&
+    input2.value - 4 >= -3 &&
+    input3.value - 4 >= -3 &&
+    input4.value - 4 >= -3
+  ) {
+    console.log("YAY");
+  }
 
-//   } else if(/*input ikke 1-4*/){
-
-//   } else {
-
-//   }
-
-// }
+};
 
 // const checkIfRight =()=>{
 //   if(/*Input riktig */){
@@ -121,5 +126,8 @@ StartGame();
 
 //TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
 btn.addEventListener("click", (event) => {
-  StartGame();
+  console.log(input1.value);
+  console.log(chosenWords);
+  validInput();
+  //StartGame();
 });
