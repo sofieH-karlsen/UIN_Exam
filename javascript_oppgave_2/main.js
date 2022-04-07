@@ -40,6 +40,8 @@ const span2 = document.querySelector("ul li:nth-of-type(2) span");
 const span3 = document.querySelector("ul li:nth-of-type(3) span");
 const span4 = document.querySelector("ul li:nth-of-type(4) span");
 
+const chosenWords = [];
+
 //ID-ing input-elements value
 const input1 = document.querySelector("input");
 const input2 = document.querySelector("ul li:nth-of-type(2) input");
@@ -50,20 +52,17 @@ const btn = document.getElementById("test");
 
 const writeWords = () => {
   //Math.floor(Math.random() * (max - min) ) + min
-  span1.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  span2.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  span3.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
-  span4.innerHTML = wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span1.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span2.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span3.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
+  span4.innerHTML =
+    wordList[Math.floor(Math.random() * (wordList.length - 0)) + 0];
 };
 
-const emptyInput = () => {
-  input1.value = input2.value = input3.value = input4.value = "";
-};
-
-const StartGame = () => {
-  emptyInput();
-  writeWords();
-
+const uniqueWords = () => {
   //Inspo: https://stackoverflow.com/questions/32029881/javascript-keep-testing-until-true
   let diffWords = false;
   while (diffWords == false) {
@@ -80,11 +79,45 @@ const StartGame = () => {
       writeWords();
     }
   }
+  chosenWords.push(
+    span1.innerHTML,
+    span2.innerHTML,
+    span3.innerHTML,
+    span4.innerHTML
+  );
 };
 
-//TODO: Lage sjekken for om man er riktig
+const emptyInput = () => {
+  input1.value = input2.value = input3.value = input4.value = "";
+  chosenWords.splice(0,4)
+};
+
+const StartGame = () => {
+  emptyInput();
+  writeWords();
+  uniqueWords();
+  console.log(chosenWords)
+};
 
 StartGame();
+
+// //TODO: Lage sjekken for om man er riktig
+// const validInput = () => {
+//   if(/*Mangler input*/){
+
+//   } else if(/*input ikke 1-4*/){
+
+//   } else {
+
+//   }
+
+// }
+
+// const checkIfRight =()=>{
+//   if(/*Input riktig */){
+
+//   } else /*input feil*/{}
+// }
 
 //TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
 btn.addEventListener("click", (event) => {
