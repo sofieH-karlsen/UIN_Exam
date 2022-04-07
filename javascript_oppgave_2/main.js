@@ -4,7 +4,6 @@ const failColor = "rgb(226, 101, 91)";
 const correctColor = "rgb(25, 232, 168)";
 const failText = "Feil";
 const correctText = "Ny runde";
-const invalidText = "Invalid input";
 
 const wordList = [
   "Huske",
@@ -51,6 +50,15 @@ const input4 = document.querySelector("ul li:nth-of-type(4) input");
 
 const btn = document.getElementById("test");
 
+const StartGame = () => {
+  reset();
+  writeWords();
+  uniqueWords();
+  btn.addEventListener("click", (event) => {
+    validInput();
+  });
+};
+
 const writeWords = () => {
   //Math.floor(Math.random() * (max - min) ) + min
   span1.innerHTML =
@@ -88,30 +96,41 @@ const uniqueWords = () => {
   );
 };
 
-const emptyInput = () => {
+const reset = () => {
   input1.value = input2.value = input3.value = input4.value = "";
   chosenWords.splice(0, 4);
+  btn.innerHTML = "Test";
+  btn.style.backgroundColor = "white";
+
 };
 
-const StartGame = () => {
-  emptyInput();
-  writeWords();
-  uniqueWords();
+const wrong = () => {
+  btn.innerHTML = failText;
+  btn.style.backgroundColor = failColor;
+  btn.addEventListener("click", (event) => {
+    validInput();
+  });
 };
 
-//TODO: Lage sjekken for om man er riktig
+const correct = () => {
+  btn.innerHTML = correctText;
+  btn.style.backgroundColor = correctColor;
+  btn.addEventListener("click", (event) => {
+    StartGame();
+  });
+};
+
 const checkIfRight = () => {
   const sortedWords = chosenWords.sort();
-  console.log(sortedWords);
   if (
     sortedWords.indexOf(span1.innerHTML) + 1 == input1.value &&
     sortedWords.indexOf(span2.innerHTML) + 1 == input2.value &&
     sortedWords.indexOf(span3.innerHTML) + 1 == input3.value &&
     sortedWords.indexOf(span4.innerHTML) + 1 == input4.value
   ) {
-    console.log("YAAAAAAAYYYY");
-  } /*input feil*/ else {
-    console.log("æææææææææææææ");
+    correct();
+  } else {
+    wrong();
   }
 };
 
@@ -136,16 +155,11 @@ const validInput = () => {
     ) {
       checkIfRight();
     } else {
-      console.log("invalid input");
+      wrong();
     }
   } else {
-    console.log("invalid input");
+    wrong();
   }
 };
 
 StartGame();
-//TODO: Fikse knapp slik at forskjellige ting blir kjørt avhenging av NÅR den trykkes
-btn.addEventListener("click", (event) => {
-  validInput();
-  //StartGame();
-});
