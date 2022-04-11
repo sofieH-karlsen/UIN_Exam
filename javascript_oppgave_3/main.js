@@ -32,3 +32,133 @@
 
 // #### START HER ####
 const startHere = "Her kommer din kode";
+
+//Originally active
+const stepOne = document.getElementById("step_one");
+//Originally hidden
+const stepTwo = document.getElementById("step_two");
+const stepThree = document.getElementById("step_three");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const submitBtn = document.getElementById("send");
+const errorMsg = document.getElementsByClassName("error");
+
+const submitMsg = "Takk, ditt skjema er sendt";
+
+const form = document.querySelector("form");
+
+// const name = 
+// const email = 
+// const age = 
+// https://www.javascripttutorial.net/javascript-dom/javascript-form/
+
+  //INDEX of current step, Current targeeeet?
+  // const currentSectionId = currentSection.value;
+// id of currentSection?
+//map, spread, id. 
+
+// STEP1 HIDE OTHERsections VIew next
+// STEP2 HIDE OTHERsections view next & prev
+// STEP3 HIDE OTHERSections view prev & eventually submit)
+//Buttons disabled until validated 
+
+
+let current = 0;
+
+const sections = document.querySelectorAll("section");
+const currentSection = [...sections][current];
+
+const steps = document.querySelectorAll("li");
+const currentStep = [...steps][current];
+const currentStepNumber = currentStep.innerHTML;
+
+const stepToggleActive = () => currentStep.classList.toggle("active");
+
+const isHidden = currentSection.hasAttribute("hidden");
+//https://www.w3schools.com/jsreF/met_element_setattribute.asp
+const sectionToggleHidden = () => {
+  if (currentSection.isHidden = true){
+    currentSection.removeAttribute("hidden");
+    console.log("Is visible");
+  } else {
+    currentSection.setAttribute("hidden");
+    console.log("Removed visibility");
+  };
+};
+
+
+/* const showStep = (event) => {
+    if (current=0) {
+      if (pressedBtn==nextBtn.id) {
+        stepToggleActive();
+        sectionToggleHidden();
+        current++,
+        stepToggleActive();
+        sectionToggleHidden();
+      }
+
+    } else if (current=1) {
+    stepToggleActive();
+      sectionToggleHidden();
+    }
+
+
+  */
+
+function changeStep(event) {
+
+  const pressedBtn = event.target.id; 
+  sectionToggleHidden();
+  stepToggleActive();
+  console.log(current);
+  
+  if (pressedBtn == nextBtn.id && current<=2) {
+    current++;
+    console.log(currentStep);
+    console.log(currentStepNumber);
+    
+  } else if (pressedBtn == nextBtn.id && current>=3) {
+      return console.log("select other button");
+  } else {
+    console.log("go back");
+  }  
+  
+};
+
+
+// TODO VALIDATION
+//Sources: 
+// https://www.w3schools.com/js/js_validation.asp
+// https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
+
+// const inputValue = form[${name}].value;? Har ikke "name-attributt"
+
+// const validateForm = () => {
+//   let nameVal = () => 
+// };
+
+// TODO errorMsg
+//Errors
+// //HIDDEN ON STEP 1
+// const handleClickPrev = (event) => {
+//   console.log("clicked prev!")
+// };
+
+// // HIDDEN UNTIL STEP 3
+// const handleSubmit = (event) => {
+//     event.preventDefault()
+//     //"Print text: submitMsg
+//     console.log("Submitted")
+//   // ONLY IF VERIFIED
+//   // Form submitted, "Submit"/POST ACTION
+// };
+
+
+//TODO: Change to one of btns 
+nextBtn.addEventListener("click", (event) => changeStep(event));
+
+  // prevBtn.addEventListener("click", handleClickPrev);
+  // form.addEventListener("submit", (event) => {event.preventDefault});
+  // submitBtn.addEventListener("submit", handleSubmit (preventDefault));
+
+// onchange update button look
