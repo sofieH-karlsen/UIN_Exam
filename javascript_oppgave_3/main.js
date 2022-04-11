@@ -83,9 +83,9 @@ function validateFields(){
 }
 
 function formNavigation(n){
-  let x, i = document.getElementsByClassName('step');
-  for(i = 0; i < x.length; i++ ){
-    x[i].className = x[i].className.replace(" active", "");
+  let activeSteps, i = document.getElementsByClassName('step');
+  for(i = 0; i < activeSteps.length; i++ ){
+    activeSteps[i].className = activeSteps[i].className.replace(" active", "");
   }
-  x[n] += 'active';
+  activeSteps[n] += 'active';
 }
