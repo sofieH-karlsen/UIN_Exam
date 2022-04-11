@@ -35,3 +35,5 @@ const wordList = [
 
 // #### START HER ####
 const startHere = "Her kommer din kode";
+
+
