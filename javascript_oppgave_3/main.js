@@ -89,3 +89,58 @@ function formNavigation(n){
   }
   activeSteps[n] += 'active';
 }
+
+
+/* Sofies noe mulig fungerende løsning
+let currentTab = 1;
+
+const tabsList = document.getElementsByClassName("step");
+const tab1 = document.getElementById("step_one")
+const tab2 = document.getElementById("step_two")
+const tab3 = document.getElementById("step_three")
+
+const nextBtn = document.getElementById("next")
+const prevBtn = document.getElementById("prev")
+const sendBtn = document.getElementById("send")
+
+
+const switchTab = () => {
+  if(currentTab == 1){
+    tab1.hidden = false
+    tab2.hidden = true
+    prevBtn.hidden = true
+  } else if(currentTab == 2){
+    tab1.hidden = true
+    tab2.hidden = false
+    tab3.hidden = true
+    prevBtn.hidden = false
+    nextBtn.hidden = false
+    sendBtn.hidden = true
+  }else if(currentTab == 3){
+    tab1.hidden = true
+    tab2.hidden = true
+    tab3.hidden = false
+    nextBtn.hidden = true
+    sendBtn.hidden = false
+  }
+}
+
+const nextTab =()=>{
+  // Gjøre det slikt at currentTab ikke kan bli mer enn 3 eller mindre enn 1
+  if (currentTab >= 1 && currentTab < tabsList.length){
+    currentTab +=1
+    switchTab()
+  }
+}
+
+const prevTab =()=>{
+  if (currentTab >= 1 && currentTab <= tabsList.length){
+    currentTab -=1
+    switchTab()
+  }
+}
+
+nextBtn.addEventListener("click", nextTab)
+
+prevBtn.addEventListener("click", prevTab)
+*/
