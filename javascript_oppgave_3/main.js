@@ -52,79 +52,79 @@ const form = document.querySelector("form");
 // const age = 
 // https://www.javascripttutorial.net/javascript-dom/javascript-form/
 
-  //INDEX of current step, Current targeeeet?
-  // const currentSectionId = currentSection.value;
-// id of currentSection?
-//map, spread, id. 
-
 // STEP1 HIDE OTHERsections VIew next
 // STEP2 HIDE OTHERsections view next & prev
 // STEP3 HIDE OTHERSections view prev & eventually submit)
 //Buttons disabled until validated 
 
-
 let current = 0;
 
 const sections = document.querySelectorAll("section");
 const currentSection = [...sections][current];
+// sections.length= 
+// const otherSections = [...sections][!current];
+//er den ok?
 
 const steps = document.querySelectorAll("li");
 const currentStep = [...steps][current];
 const currentStepNumber = currentStep.innerHTML;
-
+  console.log(currentStepNumber);
 const stepToggleActive = () => currentStep.classList.toggle("active");
 
-const isHidden = currentSection.hasAttribute("hidden");
-//https://www.w3schools.com/jsreF/met_element_setattribute.asp
-const sectionToggleHidden = () => {
-  if (currentSection.isHidden = true){
-    currentSection.removeAttribute("hidden");
-    console.log("Is visible");
-  } else {
-    currentSection.setAttribute("hidden");
-    console.log("Removed visibility");
-  };
-};
+// easier way: .hidden
+//  const pressedBtn = event.target.id;
 
-
-/* const showStep = (event) => {
-    if (current=0) {
-      if (pressedBtn==nextBtn.id) {
-        stepToggleActive();
-        sectionToggleHidden();
-        current++,
-        stepToggleActive();
-        sectionToggleHidden();
-      }
-
-    } else if (current=1) {
+const showStep = () => {
+  if (current==0) {
+    /*REMOVE SUPERFLUOUS INFO*/
+    stepOne.hidden = false;
+    stepTwo.hidden = true;
+    stepThree.hidden = true;
+    nextBtn.hidden = false;
+    prevBtn.hidden = true;
+    submitBtn.hidden = true;
     stepToggleActive();
-      sectionToggleHidden();
-    }
 
+  } else if (current==1) {
+    stepOne.hidden = true;
+    stepTwo.hidden = false;
+    stepThree.hidden = true;
+    nextBtn.hidden = false;
+    prevBtn.hidden = false;
+    submitBtn.hidden = true;
+    stepToggleActive();
 
-  */
+  } else if (current==2) {
+    stepOne.hidden = true;
+    stepTwo.hidden = true;
+    stepThree.hidden = false;
+    nextBtn.hidden = true;
+    prevBtn.hidden = false;
+    submitBtn.hidden = false;
+    stepToggleActive();
+  }
+};
 
 function changeStep(event) {
-
-  const pressedBtn = event.target.id; 
-  sectionToggleHidden();
-  stepToggleActive();
-  console.log(current);
+    console.log(`At step ${current} when button was clicked`);
+    const pressedBtn = event.target.id; 
   
-  if (pressedBtn == nextBtn.id && current<=2) {
-    current++;
-    console.log(currentStep);
-    console.log(currentStepNumber);
-    
-  } else if (pressedBtn == nextBtn.id && current>=3) {
-      return console.log("select other button");
-  } else {
-    console.log("go back");
-  }  
-  
+  if (pressedBtn == nextBtn.id) {
+      console.log(currentStep);
+      console.log(currentStepNumber);
+    current +=1;
+  } else if (pressedBtn == prevBtn.id) {
+      console.log(currentStep);
+      console.log(currentStepNumber);
+    current -=1;
+  } else if (pressedBtn == submitBtn.id) {
+    console.log("sumbit")
+  };
+  showStep();
+  stepToggleActive(); 
 };
 
+// steps in colors must change
 
 // TODO VALIDATION
 //Sources: 
@@ -154,11 +154,12 @@ function changeStep(event) {
 // };
 
 
-//TODO: Change to one of btns 
-nextBtn.addEventListener("click", (event) => changeStep(event));
+//TODO 
 
-  // prevBtn.addEventListener("click", handleClickPrev);
-  // form.addEventListener("submit", (event) => {event.preventDefault});
-  // submitBtn.addEventListener("submit", handleSubmit (preventDefault));
+nextBtn.addEventListener("click", (event) => changeStep(event));
+prevBtn.addEventListener("click", (event) => changeStep(event));
+
+// form.addEventListener("submit", (event) => {event.preventDefault});
+// submitBtn.addEventListener("submit", handleSubmit (preventDefault));
 
 // onchange update button look
