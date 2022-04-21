@@ -118,7 +118,7 @@ function changeStep(event) {
       console.log(currentStepNumber);
     current -=1;
   } else if (pressedBtn == submitBtn.id) {
-    console.log("sumbit")
+    console.log("submit")
   };
   showStep();
   stepToggleActive(); 
@@ -158,8 +158,11 @@ function changeStep(event) {
 
 nextBtn.addEventListener("click", (event) => changeStep(event));
 prevBtn.addEventListener("click", (event) => changeStep(event));
+submitBtn.addEventListener("click", (event) => {event.preventDefault});
 
-// form.addEventListener("submit", (event) => {event.preventDefault});
+// currentStep.addEventListener("click", (event) => changeStep(event));
+
+// form.addEventListener("submit", );
 // submitBtn.addEventListener("submit", handleSubmit (preventDefault));
 
 // onchange update button look
