@@ -4,12 +4,13 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./main.js"></script>
     <title>Oppgave 3</title>
   </head>
   <body>
     <!-- Skal kun legge til css-klasser (hvis behov) -->
     <main>
-      <div>
+      <div id="grid">
         <nav>
           <ul>
             <!-- Flytt active klassen med JavaScript for å vise hvilket steg man er på (styling må lages selv) -->
@@ -34,7 +35,7 @@
             </label>
           </section>
           <!-- Bruk hidden attr til å skjule / vise riktig steg -->
-          <section id="step_two" hidden>
+          <section id="step_two">
             <label for="email">
               Email
               <input
@@ -48,7 +49,7 @@
             </label>
           </section>
           <!-- Bruk hidden attr til å skjule / vise riktig steg -->
-          <section id="step_three" hidden>
+          <section id="step_three">
             <label for="age">
               Alder
               <input
@@ -72,6 +73,5 @@
         </div>
       </div>
     </main>
-    <script src="./main.js"></script>
   </body>
 </html>

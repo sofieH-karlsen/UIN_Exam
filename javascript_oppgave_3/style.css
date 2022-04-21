@@ -8,7 +8,7 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
 *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
+  /* all: unset; */
   display: revert;
 }
 
@@ -97,11 +97,24 @@ meter {
 }
 
 input {
-  border: 1px solid var(--input-border)
+  padding: 10px;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(190, 190, 190);
+  width: 100%;
+}
+
+#step_one, #step_two, #step_three{
+  padding: 10px;
 }
 
 #next {
   background-color: var(--green);
+  padding: 10px;
+  border: 1px solid var(--green);
+  border-radius: 5%;
+  box-shadow: 3px 3px 3px rgb(190, 190, 190);
+  width: 10%;
 }
 
 #prev {
@@ -110,4 +123,30 @@ input {
 
 #send {
   background-color: var(--blue);
+}
+
+#grid{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+    "nav nav nav"
+    "form form form"
+    "button button button"
+  ;
+}
+
+ul li{
+  width: 100%;
+  display: inline;
+  grid-area: nav;
+}
+
+#form{
+  grid-area: form;
+}
+
+#buttons{
+  grid-area: button;
+  display: flex;
 }
