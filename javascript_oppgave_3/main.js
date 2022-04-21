@@ -43,18 +43,14 @@ const prevBtn = document.getElementById("prev");
 const submitBtn = document.getElementById("send");
 const errorMsg = document.getElementsByClassName("error");
 
-const submitMsg = "Takk, ditt skjema er sendt";
-
 const form = document.querySelector("form");
+const submitMsg = "Takk, ditt skjema er sendt";
 
 // const name = 
 // const email = 
 // const age = 
 // https://www.javascripttutorial.net/javascript-dom/javascript-form/
 
-// STEP1 HIDE OTHERsections VIew next
-// STEP2 HIDE OTHERsections view next & prev
-// STEP3 HIDE OTHERSections view prev & eventually submit)
 //Buttons disabled until validated 
 
 let current = 0;
@@ -70,9 +66,6 @@ const currentStep = [...steps][current];
 const currentStepNumber = currentStep.innerHTML;
   console.log(currentStepNumber);
 const stepToggleActive = () => currentStep.classList.toggle("active");
-
-// easier way: .hidden
-//  const pressedBtn = event.target.id;
 
 const showStep = () => {
   if (current==0) {
@@ -110,17 +103,18 @@ function changeStep(event) {
     const pressedBtn = event.target.id; 
   
   if (pressedBtn == nextBtn.id) {
-      console.log(currentStep);
       console.log(currentStepNumber);
     current +=1;
   } else if (pressedBtn == prevBtn.id) {
-      console.log(currentStep);
       console.log(currentStepNumber);
     current -=1;
   } else if (pressedBtn == submitBtn.id) {
     console.log("submit")
-  };
+  } 
+  //VALIDATION IN HERE
   showStep();
+
+  //denne skal kanskje fjernes, er også i changeStep
   stepToggleActive(); 
 };
 
@@ -153,16 +147,12 @@ function changeStep(event) {
 //   // Form submitted, "Submit"/POST ACTION
 // };
 
+nextBtn.addEventListener("click", (event) => changeStep(event));
+prevBtn.addEventListener("click", (event) => changeStep(event));
+submitBtn.addEventListener("click", (event) => event.preventDefault);
 
 //TODO 
 
-nextBtn.addEventListener("click", (event) => changeStep(event));
-prevBtn.addEventListener("click", (event) => changeStep(event));
-submitBtn.addEventListener("click", (event) => {event.preventDefault});
-
-// currentStep.addEventListener("click", (event) => changeStep(event));
-
 // form.addEventListener("submit", );
 // submitBtn.addEventListener("submit", handleSubmit (preventDefault));
-
 // onchange update button look
