@@ -1,18 +1,18 @@
 import Title from './Title.js'
 import { useState } from 'react'
 
-const flavour = [
-  { name: 'jordbær', key: 'strawberry' },
-  { name: 'banan', key: 'banana' },
-  { name: 'lime', key: 'lime' },
-  { name: 'blåbær', key: 'blueberry' },
-  { name: 'sjokolade', key: 'chocolate' },
+const flavours = [
+  { name: 'Jordbær', key: 'strawberry' },
+  { name: 'Banan', key: 'banana' },
+  { name: 'Lime', key: 'lime' },
+  { name: 'Blåbær', key: 'blueberry' },
+  { name: 'Sjokolade', key: 'chocolate' },
 ]
 
-const optionsList = flavour.map((option) => option.key);
-
-console.log(optionsList)
-
+const nameList = flavours.map((option) => option.name)
+const keyList = flavours.map((option) => option.key)
+console.log(nameList)
+console.log(keyList)
 
 export default function Flavours() {
   const [css, setCss] = useState('')
@@ -51,20 +51,20 @@ export default function Flavours() {
                      Jordbær
                   </option>
                   */}
-            <option data-testid="option" value="strawberry">
-              Jordbær
+            <option data-testid="option" value={keyList[0]} key={keyList[0]}>
+              {nameList[0]}
             </option>
-            <option data-testid="option" value="banana">
-              Banan
+            <option data-testid="option" value={keyList[1]} key={keyList[1]}>
+              {nameList[1]}
             </option>
-            <option data-testid="option" value="lime">
-              Lime
+            <option data-testid="option" value={keyList[2]} key={keyList[2]}>
+              {nameList[2]}
             </option>
-            <option data-testid="option" value="blueberry">
-              Blåbær
+            <option data-testid="option" value={keyList[3]} key={keyList[3]}>
+              {nameList[3]}
             </option>
-            <option data-testid="option" value="chocolate">
-              Sjokolade
+            <option data-testid="option" value={keyList[4]} key={keyList[4]}>
+              {nameList[4]}
             </option>
           </select>
         </label>
