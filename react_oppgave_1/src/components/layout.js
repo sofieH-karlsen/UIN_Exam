@@ -1,11 +1,13 @@
 import Flavours from './Flavours'
 import IceCream from './IceCream'
+import Title from './Title'
 
-export default function Layout({ css, flavour, setFlavour }) {
+export default function Layout() {
   return (
     <div className="layout" data-testid="layout">
-      <Flavours flavour={flavour} setFlavour={setFlavour} />
-      <IceCream css={css} />
+      <Title />
+      <Flavours />
+      <IceCream />
     </div>
   )
 }
