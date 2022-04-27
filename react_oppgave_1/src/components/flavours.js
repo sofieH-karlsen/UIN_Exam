@@ -1,4 +1,4 @@
-export default function Flavors (){
+export default function Flavours (){
    return(
       <section id="options" data-testid="options">
          <Title title={title} />
