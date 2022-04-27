@@ -27,11 +27,5 @@ export default function App() {
   }
 
   // TODO: Gjør om til komponenter. HINT: Se på testid navnene som matcher krav til komponenter
-  return (
-      <Layout
-        css={css}
-        flavour={flavour}
-        setFlavour={setFlavour}
-      />
-  )
+  return <Layout css={css} flavour={flavour} setFlavour={setFlavour} />
 }
