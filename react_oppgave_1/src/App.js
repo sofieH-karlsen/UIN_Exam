@@ -6,8 +6,7 @@ export default function App() {
 
   const [css, setCss] = useState('')
   const [flavour, setFlavour] = useState('')
-  
-  ---
+
   //TODO: Trigg funksjonen under ved endring i select
   const handleFlavourChange = (event) => {
     const { value } = event.target
@@ -29,10 +28,10 @@ export default function App() {
 
   // TODO: Gjør om til komponenter. HINT: Se på testid navnene som matcher krav til komponenter
   return (
-      <Layout 
-        css={css} 
-        flavour={flavour} 
-        setFlavour={setFlavour}   
+      <Layout
+        css={css}
+        flavour={flavour}
+        setFlavour={setFlavour}
       />
   )
 }
