@@ -4,16 +4,16 @@ import Layout from './components/Layout'
 export default function App() {
   // TODO: Gjør nødvendige endringer slik at bakgrunnen på isen er chocolate når applikasjonen starter
 
-  const [css, setCss] = useState('');
-  const [flavour, setFlavour] = useState('');
+  const [css, setCss] = useState('')
+  const [flavour, setFlavour] = useState('')
   
   ---
   //TODO: Trigg funksjonen under ved endring i select
   const handleFlavourChange = (event) => {
     const { value } = event.target
-    //TODO: gjør nødvendig endring slik at tittel blir oppdatert med verdien valgt i select
+    // TODO: Gjør nødvendig endring slik at tittel blir oppdatert med verdien valgt i select
     setFlavour('')
-    
+
     // #### DO NOT CHANGE -- Ikke gjør endringer på koden under
     const cssFlavour = getComputedStyle(
       document.documentElement
