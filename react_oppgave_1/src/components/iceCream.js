@@ -1,4 +1,4 @@
-export default function IceCream({css}) {
+export default function IceCream({ css }) {
   return (
     <main>
       <div className="ice-cream" data-testid="ice-cream">
