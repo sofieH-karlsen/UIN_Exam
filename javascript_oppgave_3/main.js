@@ -57,15 +57,14 @@ let current = 0;
 
 const sections = document.querySelectorAll("section");
 const currentSection = [...sections][current];
-// sections.length= 
-// const otherSections = [...sections][!current];
-//er den ok?
-
 const steps = document.querySelectorAll("li");
 const currentStep = [...steps][current];
 const currentStepNumber = currentStep.innerHTML;
-  console.log(currentStepNumber);
-const stepToggleActive = () => currentStep.classList.toggle("active");
+const toggleActive = () => {
+  currentStep.classList.toggle("active");
+};
+//WHERE SHOULD THIS GO?
+
 
 const showStep = () => {
   if (current==0) {
@@ -76,7 +75,6 @@ const showStep = () => {
     nextBtn.hidden = false;
     prevBtn.hidden = true;
     submitBtn.hidden = true;
-    stepToggleActive();
 
   } else if (current==1) {
     stepOne.hidden = true;
@@ -85,7 +83,6 @@ const showStep = () => {
     nextBtn.hidden = false;
     prevBtn.hidden = false;
     submitBtn.hidden = true;
-    stepToggleActive();
 
   } else if (current==2) {
     stepOne.hidden = true;
@@ -94,7 +91,6 @@ const showStep = () => {
     nextBtn.hidden = true;
     prevBtn.hidden = false;
     submitBtn.hidden = false;
-    stepToggleActive();
   }
 };
 
@@ -106,16 +102,14 @@ function changeStep(event) {
       console.log(currentStepNumber);
     current +=1;
   } else if (pressedBtn == prevBtn.id) {
-      console.log(currentStepNumber);
     current -=1;
+      console.log(currentStepNumber);
   } else if (pressedBtn == submitBtn.id) {
-    console.log("submit")
+    
+    console.log("submit");
   } 
-  //VALIDATION IN HERE
+  toggleActive(); //VALIDATION IN HERE
   showStep();
-
-  //denne skal kanskje fjernes, er også i changeStep
-  stepToggleActive(); 
 };
 
 // steps in colors must change
@@ -149,7 +143,8 @@ function changeStep(event) {
 
 nextBtn.addEventListener("click", (event) => changeStep(event));
 prevBtn.addEventListener("click", (event) => changeStep(event));
-submitBtn.addEventListener("click", (event) => event.preventDefault);
+submitBtn.addEventListener("click", (event) => {changeStep, event.preventDefault()});
+//SUBMIT AVOID REFRESH OF FORM, but show message
 
 //TODO 
 
