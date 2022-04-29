@@ -1,3 +1,3 @@
-export default function Title({ title }) {
-  return <h1 data-testid="title">{title}</h1>
+export default function Title() {
+  return <h1 data-testid="title">ÆÆÆÆÆÆ</h1>
 }
