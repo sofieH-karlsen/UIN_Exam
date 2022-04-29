@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Title from './Title.js'
+import IceCream from './IceCream'
 
 const options = [
   { name: 'Jordbær', key: 'strawberry' },
@@ -34,26 +35,29 @@ export default function Flavours() {
   }
 
   return (
-    <section id="options" data-testid="options">
-      <Title />
-      <div className="option" data-testid="flavours" id="flavours">
-        <label htmlFor="flavour">
-          <select
-            defaultValue="chocolate"
-            id="flavour"
-            data-testid="flavour"
-            onChange={handleFlavourChange}
-            /* Inspo: https://www.geeksforgeeks.org/how-to-change-a-selects-options-based-on-another-dropdown-using-react/ */
-          >
-            {options.map((option) => (
-              <option value={option.key} key={option.key}>
-                {option.name}
-                {/* kode fra: https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react */}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
-    </section>
+    <>
+      <Title title={flavour.value} />
+      <section id="options" data-testid="options">
+        <div className="option" data-testid="flavours" id="flavours">
+          <label htmlFor="flavour">
+            <select
+              defaultValue="chocolate"
+              id="flavour"
+              data-testid="flavour"
+              onChange={handleFlavourChange}
+              /* Inspo: https://www.geeksforgeeks.org/how-to-change-a-selects-options-based-on-another-dropdown-using-react/ */
+            >
+              {options.map((option) => (
+                <option value={option.key} key={option.key}>
+                  {option.name}
+                  {/* kode fra: https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react */}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </section>
+      <IceCream css={css} />
+    </>
   )
 }
