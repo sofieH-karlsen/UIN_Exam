@@ -42,10 +42,13 @@ const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const submitBtn = document.getElementById("send");
 const errorMsg = document.getElementsByClassName("error");
-
-const form = document.querySelector("form");
 const submitMsg = "Takk, ditt skjema er sendt";
 
+let current = 0;
+const currentStep = [...steps][current];
+const numberOfSteps = [...steps].length;
+const currentStepNumber = currentStep.innerHTML;const form = document.querySelector("form");
+const steps = document.querySelectorAll("li");
 // const name = 
 // const email = 
 // const age = 
@@ -53,22 +56,11 @@ const submitMsg = "Takk, ditt skjema er sendt";
 
 //Buttons disabled until validated 
 
-let current = 0;
+  // const sections = document.querySelectorAll("section");
+  // const currentSection = [...sections][current];
 
-const sections = document.querySelectorAll("section");
-const currentSection = [...sections][current];
-const steps = document.querySelectorAll("li");
-const currentStep = [...steps][current];
-const currentStepNumber = currentStep.innerHTML;
-const toggleActive = () => {
-  currentStep.classList.toggle("active");
-};
-//WHERE SHOULD THIS GO?
-
-
-const showStep = () => {
+function showStep () {
   if (current==0) {
-    /*REMOVE SUPERFLUOUS INFO*/
     stepOne.hidden = false;
     stepTwo.hidden = true;
     stepThree.hidden = true;
@@ -92,27 +84,53 @@ const showStep = () => {
     prevBtn.hidden = false;
     submitBtn.hidden = false;
   }
-};
 
-function changeStep(event) {
-    console.log(`At step ${current} when button was clicked`);
-    const pressedBtn = event.target.id; 
-  
-  if (pressedBtn == nextBtn.id) {
-      console.log(currentStepNumber);
-    current +=1;
-  } else if (pressedBtn == prevBtn.id) {
-    current -=1;
-      console.log(currentStepNumber);
-  } else if (pressedBtn == submitBtn.id) {
+  function changeStep (event) {
+      
     
-    console.log("submit");
-  } 
-  toggleActive(); //VALIDATION IN HERE
-  showStep();
-};
+    
+    
+    
+    
+    
+    
+    
+    
+    const pressedBtn = event.target.id;  
+      
+      if (pressedBtn == nextBtn.id) {
+        console.log(currentStepNumber)
+      } else if (pressedBtn == prevBtn.id) {
+        console.log(currentStepNumber)
+      } 
+      console.log(`At step ${current+1} when ${pressedBtn}button was clicked`)
+      
 
-// steps in colors must change
+      for (let i = 0; 0 <= i <numberOfSteps; i++){
+        if (current == currentStepNumber-1){
+          currentStep[i].className.replace("step", "step active");
+          console.log("activated")
+        } else if (current != currentStepNumber-1) {
+          currentStep[i].className.replace("step active", "step");
+          console.log("deactivated")
+        }
+      }
+      
+    };
+
+    nextBtn.addEventListener("click", (event) => changeStep(event));
+    prevBtn.addEventListener("click", (event) => changeStep(event));
+};
+  
+
+
+
+
+//Hjelp fra Sofie
+
+
+
+
 
 // TODO VALIDATION
 //Sources: 
@@ -128,9 +146,7 @@ function changeStep(event) {
 // TODO errorMsg
 //Errors
 // //HIDDEN ON STEP 1
-// const handleClickPrev = (event) => {
-//   console.log("clicked prev!")
-// };
+
 
 // // HIDDEN UNTIL STEP 3
 // const handleSubmit = (event) => {
@@ -140,10 +156,15 @@ function changeStep(event) {
 //   // ONLY IF VERIFIED
 //   // Form submitted, "Submit"/POST ACTION
 // };
+function onSubmit () {
+  document.createElement('h1').innerHTML = submitMsg
+  return {  
+    submitMsg
+  }
+};
 
-nextBtn.addEventListener("click", (event) => changeStep(event));
-prevBtn.addEventListener("click", (event) => changeStep(event));
-submitBtn.addEventListener("click", (event) => {changeStep, event.preventDefault()});
+
+submitBtn.addEventListener("submit", (event) => {onSubmit(), event.preventDefault()});
 //SUBMIT AVOID REFRESH OF FORM, but show message
 
 //TODO 
