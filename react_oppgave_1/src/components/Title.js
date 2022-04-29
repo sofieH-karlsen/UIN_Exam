@@ -1,3 +1,4 @@
 export default function Title({ title }) {
-  return <h1 data-testid="title" >{title}</h1>
+  title = "chocolate"
+  return <h1 data-testid="title">{title}</h1>
 }
