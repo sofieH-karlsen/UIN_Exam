@@ -3,16 +3,16 @@ import Title from './Title.js'
 import IceCream from './IceCream'
 
 const options = [
-  { name: 'Jordbær', key: 'strawberry' },
-  { name: 'Banan', key: 'banana' },
-  { name: 'Lime', key: 'lime' },
-  { name: 'Blåbær', key: 'blueberry' },
-  { name: 'Sjokolade', key: 'chocolate' },
+  { name: 'Jordbær', value: 'strawberry' },
+  { name: 'Banan', value: 'banana' },
+  { name: 'Lime', value: 'lime' },
+  { name: 'Blåbær', value: 'blueberry' },
+  { name: 'Sjokolade', value: 'chocolate' },
 ]
 
 export default function Flavours() {
   const [css, setCss] = useState('')
-  const [flavour, setFlavour] = useState('')
+  const [flavour, setFlavour] = useState(options[4])
 
   // TO DO: Trigg funksjonen under ved endring i select
 
@@ -48,7 +48,7 @@ export default function Flavours() {
               /* Inspo: https://www.geeksforgeeks.org/how-to-change-a-selects-options-based-on-another-dropdown-using-react/ */
             >
               {options.map((option) => (
-                <option value={option.key} key={option.key}>
+                <option value={option.value} key={option.value}>
                   {option.name}
                   {/* kode fra: https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react */}
                 </option>
