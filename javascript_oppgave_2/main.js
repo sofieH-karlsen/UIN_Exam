@@ -48,7 +48,7 @@ const input2 = document.querySelector("ul li:nth-of-type(2) input");
 const input3 = document.querySelector("ul li:nth-of-type(3) input");
 const input4 = document.querySelector("ul li:nth-of-type(4) input");
 
-const btn = document.getElementById("test");
+const btn = document.getElementById("sjekk_svar");
 
 const StartGame = () => {
   reset();
