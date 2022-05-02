@@ -33,120 +33,93 @@
 // #### START HER ####
 const startHere = "Her kommer din kode";
 
-//Originally active
 const stepOne = document.getElementById("step_one");
-//Originally hidden
 const stepTwo = document.getElementById("step_two");
 const stepThree = document.getElementById("step_three");
+
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const submitBtn = document.getElementById("send");
+
+const form = document.querySelector("form");
+
 const errorMsg = document.getElementsByClassName("error");
 const submitMsg = "Takk, ditt skjema er sendt";
 
-let current = 0;
-const currentStep = [...steps][current];
-const numberOfSteps = [...steps].length;
-const currentStepNumber = currentStep.innerHTML;const form = document.querySelector("form");
-const steps = document.querySelectorAll("li");
-// const name = 
-// const email = 
-// const age = 
+// const name =
+// const email =
+// const age =
 // https://www.javascripttutorial.net/javascript-dom/javascript-form/
 
-//Buttons disabled until validated 
+//Buttons disabled until validated
 
-  // const sections = document.querySelectorAll("section");
-  // const currentSection = [...sections][current];
+let current = 0;
 
-function showStep () {
-  if (current==0) {
+function changeStep(event) {
+  const pressedBtn = event.target.id;
+  const steps = document.getElementsByClassName("step");
+  const currentStep = steps[current];
+  const currentStepNumber = currentStep.innerHTML; 
+  // const deactivateAllSteps = () => steps.classList?.remove("active");
+  const changeStatusCurrent = () => currentStep.classList.add("active");
+    
+  /*Hjelp fra Sofie/Ivo*/
+  if (current == 0 && currentStepNumber==1) {
     stepOne.hidden = false;
     stepTwo.hidden = true;
     stepThree.hidden = true;
     nextBtn.hidden = false;
     prevBtn.hidden = true;
     submitBtn.hidden = true;
-
-  } else if (current==1) {
+  } else if (current == 1 && currentStepNumber==2) {
     stepOne.hidden = true;
     stepTwo.hidden = false;
     stepThree.hidden = true;
     nextBtn.hidden = false;
     prevBtn.hidden = false;
     submitBtn.hidden = true;
-
-  } else if (current==2) {
+ } else if (current == 2 && currentStepNumber==3) {
     stepOne.hidden = true;
     stepTwo.hidden = true;
     stepThree.hidden = false;
     nextBtn.hidden = true;
     prevBtn.hidden = false;
     submitBtn.hidden = false;
-  }
+  };
+  /*--*/
+ 
+  if (pressedBtn == nextBtn.id) {
+    current++;
+  } else if (pressedBtn == prevBtn.id) {
+    current--;
+  };
 
-  function changeStep (event) {
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    const pressedBtn = event.target.id;  
-      
-      if (pressedBtn == nextBtn.id) {
-        console.log(currentStepNumber)
-      } else if (pressedBtn == prevBtn.id) {
-        console.log(currentStepNumber)
-      } 
-      console.log(`At step ${current+1} when ${pressedBtn}button was clicked`)
-      
-
-      for (let i = 0; 0 <= i <numberOfSteps; i++){
-        if (current == currentStepNumber-1){
-          currentStep[i].className.replace("step", "step active");
-          console.log("activated")
-        } else if (current != currentStepNumber-1) {
-          currentStep[i].className.replace("step active", "step");
-          console.log("deactivated")
-        }
-      }
-      
-    };
-
-    nextBtn.addEventListener("click", (event) => changeStep(event));
-    prevBtn.addEventListener("click", (event) => changeStep(event));
+  changeStatusCurrent();
+  console.log(current);
 };
-  
 
+// TODO
+//ikke måtte klikke på neste 2 ganger
+//kunne gå fram og tilbake uten at det er noe problem
+//validering
 
-
-
-//Hjelp fra Sofie
-
-
-
-
+nextBtn.addEventListener("click", (event) => changeStep(event));
+prevBtn.addEventListener("click", (event) => changeStep(event));
 
 // TODO VALIDATION
-//Sources: 
+//Sources:
 // https://www.w3schools.com/js/js_validation.asp
 // https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
 
 // const inputValue = form[${name}].value;? Har ikke "name-attributt"
 
 // const validateForm = () => {
-//   let nameVal = () => 
+//   let nameVal = () =>
 // };
 
 // TODO errorMsg
 //Errors
 // //HIDDEN ON STEP 1
-
 
 // // HIDDEN UNTIL STEP 3
 // const handleSubmit = (event) => {
@@ -156,19 +129,16 @@ function showStep () {
 //   // ONLY IF VERIFIED
 //   // Form submitted, "Submit"/POST ACTION
 // };
-function onSubmit () {
-  document.createElement('h1').innerHTML = submitMsg
-  return {  
-    submitMsg
-  }
+
+function onSubmit() {
+  const submitMsg = document.createElement("h1").innerHTML;
+  return submitMsg;
 };
 
+submitBtn.addEventListener("submit", (event) => {
+  onSubmit(), event.preventDefault();
+});
 
-submitBtn.addEventListener("submit", (event) => {onSubmit(), event.preventDefault()});
-//SUBMIT AVOID REFRESH OF FORM, but show message
-
-//TODO 
-
+// SUBMIT AVOID REFRESH OF FORM, but show message
 // form.addEventListener("submit", );
-// submitBtn.addEventListener("submit", handleSubmit (preventDefault));
 // onchange update button look
