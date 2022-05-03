@@ -1,3 +1,11 @@
+import { Route, Routes } from "react-router-dom";
+
+import Navigation from "./components/Navigation";
+import Services from "./starter_files/Services";
+import Create from "./starter_files/Create"
+
+
+
 export default function App() {
   // TODO: Legg til om nødvendig logikk her
   return (
@@ -31,7 +39,13 @@ export default function App() {
         </div>
         <div data-testid="circles">Sirkler</div>
       </section>
-      {/* TODO: Oppsett for React Router kommer her */}
+
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Services />} />
+        <Route path="create" element={<Create />} />
+      </Routes>
+
       <footer data-testid="footer">
         <p>Tjenesteweb AS, 2022</p>
         <p>99 00 00 00, mail@tjenesteweb.no</p>

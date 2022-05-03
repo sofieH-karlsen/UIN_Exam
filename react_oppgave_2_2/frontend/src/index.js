@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
 
 
 // TODO: Kommenter ut om du ønsker å bruke .scss

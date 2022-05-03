@@ -1,14 +1,24 @@
+import { NavLink } from 'react-router-dom'
+
 export default function Navigation() {
-    return (
-      <nav>
-        <ul>
-          <li>
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink
+            to="/"
+            style={linkStyle}
+            className={({ isActive }) => (isActive ? 'activated' : '')}
+          >
             Hjem
-          </li>
-          <li>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/om" style={linkStyle}>
             Om
-          </li>
-        </ul>
-      </nav>
-    );
-  }
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  )
+}
