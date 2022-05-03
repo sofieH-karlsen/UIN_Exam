@@ -1,4 +1,6 @@
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+
 
 // TODO: Kommenter ut om du ønsker å bruke .scss
 // import './styles/scss/main.scss'
@@ -7,5 +9,6 @@ import ReactDOM from 'react-dom'
 import './styles/css/main.css'
 
 import App from './App'
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
