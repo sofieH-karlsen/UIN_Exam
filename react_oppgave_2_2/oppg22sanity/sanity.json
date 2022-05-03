@@ -16,8 +16,7 @@
   "env": {
     "development": {
       "plugins": [
-        "@sanity/vision"
-      ]
+        "@sanity/vision"]
     }
   },
   "parts": [
