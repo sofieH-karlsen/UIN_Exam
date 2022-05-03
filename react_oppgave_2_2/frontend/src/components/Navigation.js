@@ -5,20 +5,22 @@ export default function Navigation() {
     <nav>
       <ul>
         <li>
-          <NavLink
-            to="/"
-            style={linkStyle}
-            className={({ isActive }) => (isActive ? 'activated' : '')}
+          <NavLink 
+          to="/"
+          className={({isActive}) => (isActive ? 'activated' : '')}
           >
-            Hjem
-          </NavLink>
+            Home
+            </NavLink>
         </li>
         <li>
-          <NavLink to="/om" style={linkStyle}>
-            Om
-          </NavLink>
+        <NavLink 
+          to="/ny"
+          className={({isActive}) => (isActive ? 'activated' : '')}
+          >
+            Create
+            </NavLink>
         </li>
       </ul>
     </nav>
-  )
+  );
 }

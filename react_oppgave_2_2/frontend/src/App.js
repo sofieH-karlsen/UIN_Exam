@@ -40,11 +40,18 @@ export default function App() {
         <div data-testid="circles">Sirkler</div>
       </section>
 
+
       <Navigation />
       <Routes>
+        <Route index element={<Services />} />
         <Route path="/" element={<Services />} />
-        <Route path="create" element={<Create />} />
+        <Route index element={<Create />} />
+        <Route path="/ny" element={<Create />} />
       </Routes>
+
+  
+    
+      
 
       <footer data-testid="footer">
         <p>Tjenesteweb AS, 2022</p>
