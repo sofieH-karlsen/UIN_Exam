@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
+import { services } from './data/services'
 
 export default function App() {
   // TODO: Legg til om nødvendig logikk her
@@ -18,7 +19,8 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Services />} />
           <Route path="tjenester" element={<Services />}>
-            <Route path="en-unik-url" element={<Service />} />
+            <Route path={services.slug} element={<Service />} />
+            {/* TODO: passe på at det er "tjenester" foran uansett om man går inn fra forsiden eller "TJENESTER" */}
             <Route path="ny" element={<Create />} />
           </Route>
           <Route path="*" element={<NoMatch />} />

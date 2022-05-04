@@ -1,8 +1,7 @@
 // TODO: Denne egner seg for /tjenester/en-eller-annen-tjeneste
-
 export default function Service() {
   return (
-    <>
+    <div>
       <main>
         <h2 data-testid="service_title">Title</h2>
         <section>
@@ -28,6 +27,6 @@ export default function Service() {
           Boks design
         </div>
       </aside>
-    </>
+    </div>
   )
 }
