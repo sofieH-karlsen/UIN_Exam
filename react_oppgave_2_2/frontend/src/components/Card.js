@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Title from './Title'
 
 export default function Card() {
@@ -5,7 +6,7 @@ export default function Card() {
     <article data-testid="service_wrapper">
       <Title />
       <p data-testid="services_preamble">Tjeneste ingress</p>
-      <a data-testid="services_url">Til tjeneste</a>
+      <NavLink to="en-unik-url" data-testid="services_url">Til tjeneste</NavLink>
     </article>
   )
 }
