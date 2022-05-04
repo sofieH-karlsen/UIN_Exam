@@ -2,6 +2,7 @@
 
 import { services } from '../data/services'
 import Card from './Card'
+import Filter from './Filter'
 
 export default function Services() {
   return (
@@ -17,6 +18,7 @@ export default function Services() {
           type="search"
           placeholder="Søk etter tjenester"
         />
+        <Filter />
       </label>
       <section data-testid="services">
         {/* TODO: Bruk .map til å skrive ut tjenester CHECK */}
