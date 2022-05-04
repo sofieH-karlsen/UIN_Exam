@@ -1,10 +1,12 @@
 // TODO: Denne egner seg for /tjenester og /
 
-import { services } from '../data/services'
-import Card from './Card'
-//import Filter from './Filter'
+//import {useState} from 'react'
+//import { services } from '../data/services'
+//import Card from './Card'
+import Filter from './Filter'
 
 export default function Services() {
+  //const [searchTerm, setSearchTerm] = useState('')
   return (
     <main>
       <h2 data-testid="title">Alle tjenester</h2>
@@ -17,19 +19,20 @@ export default function Services() {
           name="search"
           type="search"
           placeholder="Søk etter tjenester"
+          //onChange={(event) => {setSearchTerm(event.target.value)}}
         />
-        {/*<Filter />*/}
+        <Filter />
       </label>
       <section data-testid="services">
         {/* TODO: Bruk .map til å skrive ut tjenester CHECK */}
-        {services.map((service) => (
+        {/*{services.map((service) => (
           <Card
             key={service.key}
             title={service.title}
             preamble={service.preAmble}
             link={service.slug}
-          />
-        ))}
+        />
+        ))*/}
         {/* TODO: Hvis ingen tjenester ved filtrering. Vis denne */}
         <p data-testid="empty">Ingen tjenester</p>
       </section>

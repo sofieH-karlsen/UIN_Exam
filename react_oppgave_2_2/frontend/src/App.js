@@ -9,6 +9,7 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import { services } from './data/services'
 
+
 export default function App() {
   // TODO: Legg til om nødvendig logikk her
   return (
