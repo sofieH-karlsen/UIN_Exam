@@ -7,7 +7,7 @@ import Layout from './components/Layout'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
-import './styles/scss/main.scss';
+
 
 export default function App() {
   // TODO: Legg til om nødvendig logikk her
