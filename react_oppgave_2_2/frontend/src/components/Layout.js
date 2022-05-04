@@ -1,11 +1,5 @@
-// import { Outlet } from 'react-router-dom'
-import Services from './Services'
+import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
-  return (
-    <>
-      <Services />
-      {/* <Outlet />, fjern Services-komponent, gjør dynamisk */}
-    </>
-  )
+  return <Outlet />
 }
