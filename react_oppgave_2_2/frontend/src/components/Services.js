@@ -1,6 +1,7 @@
 // TODO: Denne egner seg for /tjenester og /
 
-// import { services } from '../data/services'
+import { services } from '../data/services'
+import Card from './Card'
 
 export default function Services() {
   return (
@@ -18,17 +19,15 @@ export default function Services() {
         />
       </label>
       <section data-testid="services">
-        {/* TODO: Bruk .map til å skrive ut tjenester services.map((service) => (
-            <ul>
-              <li>{service.title}</li>
-            </ul>
-          )) */}
-        {/* <Card /> */}
-        <article data-testid="service_wrapper">
-          <h3 data-testid="services_title">Tjeneste tittel</h3>
-          <p data-testid="services_preamble">Tjeneste ingress</p>
-          <a data-testid="services_url">Til tjeneste</a>
-        </article>
+        {/* TODO: Bruk .map til å skrive ut tjenester CHECK */}
+        {services.map((service) => (
+          <Card
+            key={service.key}
+            title={service.title}
+            preamble={service.preAmble}
+            link={service.slug}
+          />
+        ))}
         {/* TODO: Hvis ingen tjenester ved filtrering. Vis denne */}
         <p data-testid="empty">Ingen tjenester</p>
       </section>

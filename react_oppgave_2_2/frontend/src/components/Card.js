@@ -1,12 +1,13 @@
-import { NavLink } from 'react-router-dom'
-import Title from './Title'
+// import { NavLink } from 'react-router-dom'
 
-export default function Card() {
+export default function Card({ key, title, preamble, link }) {
   return (
-    <article data-testid="service_wrapper">
-      <Title />
-      <p data-testid="services_preamble">Tjeneste ingress</p>
-      <NavLink to="en-unik-url" data-testid="services_url">Til tjeneste</NavLink>
+    <article key={key}>
+      <h3>{title}</h3>
+      <p>{preamble}</p>
+      <a href={`${link}`}>Til tjeneste</a>
+
+      {/* <NavLink path={`${link}`}>Til tjeneste</NavLink> */}
     </article>
   )
 }
