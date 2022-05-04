@@ -1,5 +1,7 @@
 // TODO: Denne egner seg for /tjenester og /
 
+// import { services } from '../data/services'
+
 export default function Services() {
   return (
     <main>
@@ -16,8 +18,12 @@ export default function Services() {
         />
       </label>
       <section data-testid="services">
-        {/* TODO: Bruk .map til å skrive ut tjenester */}
-        {/* CARD COMPONENT MAP? */}
+        {/* TODO: Bruk .map til å skrive ut tjenester services.map((service) => (
+            <ul>
+              <li>{service.title}</li>
+            </ul>
+          )) */}
+        {/* <Card /> */}
         <article data-testid="service_wrapper">
           <h3 data-testid="services_title">Tjeneste tittel</h3>
           <p data-testid="services_preamble">Tjeneste ingress</p>

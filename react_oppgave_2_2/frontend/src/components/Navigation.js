@@ -7,7 +7,7 @@ export default function Navigation() {
   return (
     <nav>
       <NavLink to="/" style={linkStyle}>
-      {/* TODO: Change "to"? */}
+        {/* TODO: Change "to"? MAKE BIGGER */}
         <h1 data-testid="logo">Tjenesteweb</h1>
       </NavLink>
       <ul>
@@ -23,20 +23,5 @@ export default function Navigation() {
         </li>
       </ul>
     </nav>
-
-    // <nav>
-    //     <ul data-testid="nav">
-    //       <li data-testid="nav_services">
-    //         <a data-testid="services_link" href="#">
-    //           Tjenester
-    //         </a>
-    //       </li>
-    //       <li data-testid="nav_new">
-    //         <a data-testid="create_link" href="#">
-    //           Ny
-    //         </a>
-    //       </li>
-    //     </ul>
-    //   </nav>
   )
 }

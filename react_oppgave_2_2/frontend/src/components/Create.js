@@ -1,5 +1,4 @@
-//TODO: vet ikke hvorfor denne ikke virker
-// import { hexColors } from './data/services'
+import { hexColors } from '../data/services'
 
 // TODO: Denne egner seg for /ny
 
