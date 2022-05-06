@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import { useNavigate } from 'react-router-dom'
 import { services } from '../data/services'
 import Card from './Card'
 
@@ -7,7 +8,6 @@ export default function Filter() {
   return (
     <>
       <label htmlFor="search">
-        
         <input
           data-testid="search"
           id="search"
@@ -21,15 +21,14 @@ export default function Filter() {
       </label>
       <section>
         {services
-          .filter(function (service) {
-            if (searchTerm === '') {
+          .filter((service)=> {
+            if (searchTerm == '') {
               return services
-            } else if (
+            }
+            if (
               service.title.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
               return service.title
-            } else {
-              <p data-testid="empty">Ingen tjenester</p>
             }
           })
           .map((service) => (
@@ -40,9 +39,10 @@ export default function Filter() {
               link={service.slug}
             />
           ))}
+        <p data-testid="empty">Ingen tjenester</p>
       </section>
     </>
   )
 }
 
-//KILDE: https://www.youtube.com/watch?v=mZvKPtH9Fzo
+// KILDE: https://www.youtube.com/watch?v=mZvKPtH9Fzo
