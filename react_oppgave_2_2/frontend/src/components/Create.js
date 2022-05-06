@@ -4,7 +4,7 @@ import { hexColors } from '../data/services'
 
 export default function Create() {
   return (
-    <main>
+    <main className="createNewService">
       <h2 data-testid="title">Ny tjeneste</h2>
       {/* TODO: Gjør det mulig å sende skjema med alt av verdier */}
       <form data-testid="form" noValidate>

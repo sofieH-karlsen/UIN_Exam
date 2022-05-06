@@ -11,44 +11,13 @@ export default function Services() {
   )
 }
 
-{
-  /* TODO: Få filter til å virke */
-}
-{
-  /*       
-      <label htmlFor="search">
-        Søk:
-        <input
-          data-testid="search"
-          id="search"
-          name="search"
-          type="search"
-          placeholder="Søk etter tjenester"
-          //onChange={(event) => {setSearchTerm(event.target.value)}}
-        /> */
-}
+/* TODO: Skal vi flytte inn noe mer fra Filter inn hit? */
 
-{
-  /* </label>
-        <section data-testid="services">
-        {/* TODO: Bruk .map til å skrive ut tjenester CHECK */
-}
-{
-  /*{services.map((service) => (
-          <Card
-            key={service.key}
-            title={service.title}
-            preamble={service.preAmble}
-            link={service.slug}
-        />
-        )) */
-}
-{
-  /* TODO: Hvis ingen tjenester ved filtrering. Vis denne */
-}
-{
-  /* <p data-testid="empty">Ingen tjenester</p> */
-}
-{
-  /* </section> */
-}
+
+/* TODO: Få filter til å virke */
+
+/* TODO: Hvis ingen tjenester ved filtrering. Vis denne */
+
+/* <p data-testid="empty">Ingen tjenester</p> */
+
+/* </section> */
