@@ -1,11 +1,14 @@
 import { hexColors } from '../data/services'
+import Title from './Title'
 
 // TODO: Denne egner seg for /ny
 
 export default function Create() {
   return (
     <main className="createNewService">
-      <h2 data-testid="title">Ny tjeneste</h2>
+      <h2 data-testid="title">
+        <Title title="Lag ny tjeneste" />
+      </h2>
       {/* TODO: Gjør det mulig å sende skjema med alt av verdier */}
       <form data-testid="form" noValidate>
         <label htmlFor="title">

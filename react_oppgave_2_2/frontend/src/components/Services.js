@@ -1,11 +1,14 @@
 // TODO: Denne egner seg for /tjenester og /
 
 import Filter from './Filter'
+import Title from './Title'
 
 export default function Services() {
   return (
     <main className="services">
-      <h2 data-testid="title">Alle tjenester</h2>
+      <h2 data-testid="title">
+        <Title title="Alle tjenester" />
+      </h2>
       <Filter />
     </main>
   )

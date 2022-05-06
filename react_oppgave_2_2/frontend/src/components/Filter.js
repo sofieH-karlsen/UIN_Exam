@@ -12,16 +12,16 @@ export default function Filter() {
           id="search"
           name="search"
           type="search"
-          placeholder="Søk etter tjenester"
+          placeholder="Søk etter tjenester her"
           onChange={(event) => {
             setSearchTerm(event.target.value)
           }}
         />
       </label>
-      <section>
+      <section className="ofCards">
         {services
-          .filter((service)=> {
-            if (searchTerm == '') {
+          .filter((service) => {
+            if (searchTerm === '') {
               return services
             }
             if (

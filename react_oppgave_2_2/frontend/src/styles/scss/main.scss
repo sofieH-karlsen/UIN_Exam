@@ -1,6 +1,5 @@
 @import 'reset.scss';
 
-
 html {
   font-size: 62.5%;
 }
@@ -12,6 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
 }
 
 code {
@@ -19,48 +20,167 @@ code {
     monospace;
 }
 
-.services{
- 
+
+// @media screen and (min-height: 700px){
+
+.container{
+  display:  grid;
+  grid-template-rows: 2fr 4fr 1fr;
+  grid-template-columns: auto auto;
+  grid-template-areas: 
+    "header header" 
+    "main aside"
+    "footer footer";
 }
+
+h2{
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.title{
+  font-weight: 700;
+}
+
+header{
+  grid-area: header;
+  background-color: rgb(235, 240, 244);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-evenly;
+
+  nav{
+    justify-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+
+    .active-nav{
+    color: black;
+    text-decoration: none;
+    cursor: pointer; //Dette er standard for linker?
+    border-radius: 5px;
+    }
+
+    .underline{
+    margin-bottom: 0.5rem;
+    }
+
+    ul{
+      display: flex;
+      gap: 2rem;
+
+      .newService{
+        background-color: teal;
+        color: white;
+        padding: 0.7rem 1.4rem;
+        box-shadow: 2px;
+      }
+    }
+  }  
+
+  .hero{
+    display: flex;
+    gap: 40%;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftHero{
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    cite{
+      font-style: italic;
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+    span{
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+    .circles{
+      padding: 3rem;
+      margin-right: 5rem;
+      height: 3rem;
+      width: 3rem;
+      border: 3px solid yellow;
+    }
+  }
+}
+
+main{
+  grid-area: main;
+  margin: 3rem 4rem;
+  max-width: 70vw;
+  
+
+  // .services{
+      
+
+    
+  // }
+  // label{
+      input{
+        border-radius: 5px;
+        padding: 0.5rem;
+        box-shadow: none;
+        margin-bottom: 1rem;
+      }  
+    // }
+
+  .ofCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  
+    .card{
+    flex: 0 25% 15%;
+    max-height: 50%;
+    background-color: rgb(101, 215, 215);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    } 
+  }
+  // .servicePage{
+  
+  // }
+
+
+}  
 
 input{
   font-size: 10px;
   margin-bottom: 10px;
+  display:flex;
+  flex-direction: column;
+
 }
 
-h2{
-  font-size: 20px;
-  margin-bottom: 10px;
+button{
+  color: green;
 }
 
-.card{
-  display: inline-block;
-  width: 100px;
-  border: 2px solid black;
-  padding: 10px;
-  margin: 5px;
+
+// service
+
+
+aside{
+  grid-area: "aside";
 }
 
-.hero, .nav{
-  background-color: rgb(209, 209, 209);
-  height: 10vh;
-  padding: 10px;
-}
 
-.hero{
-  font-style: italic;
-}
-
-.nav{
+footer{
+  grid-area: footer;
   display: flex;
+  padding: 2rem;
   justify-content: space-between;
-
+  align-items: flex-end;
 }
 
-.active-nav {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 5px;
-  
-}
+// } TODO: SJEKK OPP MEDIA QUERY etc
+

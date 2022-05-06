@@ -1,15 +1,18 @@
 import { NavLink } from 'react-router-dom'
+import Title from './Title'
 
 export default function Navigation() {
   const linkStyle = ({ isActive }) => ({
-    border: isActive ? '2px solid #a9a9a9' : 'none',
+    borderBottom: isActive ? '2px solid #a9a9a9' : 'none',
   })
+  /* GJØRE OM DENNE TIL UNDERLINE */
+
   return (
-    <nav className="nav">
-      <NavLink to="/" className="active-nav">
+    <nav>
+      <NavLink to="/" className="active-nav" style={linkStyle}>
         {/* TODO: Change "to"? MAKE BIGGER */}
-        <h1 data-testid="logo" className="underline">
-          Tjenesteweb
+        <h1 data-testid="logo">
+          <Title title="Tjenesteweb" />
         </h1>
       </NavLink>
       <ul>
@@ -19,7 +22,7 @@ export default function Navigation() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="active-nav" to="/ny" style={linkStyle}>
+          <NavLink className="active-nav newService" to="/ny" style={linkStyle}>
             Ny tjeneste
           </NavLink>
         </li>

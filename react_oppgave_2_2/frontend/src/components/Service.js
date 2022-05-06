@@ -7,8 +7,8 @@ import Title from './Title'
 export default function Service() {
   // const selectedService = select.target.value;
   return services.map((eachService) => (
-    <div className="servicePage" key={eachService.key}>
-      <main>
+    <div key={eachService.key}>
+      <main className="servicePage">
         <h2 data-testid="service_title">
           <Title title={eachService.title} />
         </h2>
