@@ -13,7 +13,6 @@ export default function Services() {
 
 /* TODO: Skal vi flytte inn noe mer fra Filter inn hit? */
 
-
 /* TODO: Få filter til å virke */
 
 /* TODO: Hvis ingen tjenester ved filtrering. Vis denne */

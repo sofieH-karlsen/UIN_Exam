@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
-// import { services } from '../data/services'
 import Services from '../components/Services'
 import Service from '../components/Service'
 import Create from '../components/Create'
 import NoMatch from '../components/NoMatch'
-import Layout from '../components/Layout'
+import Layout from '../layout/Layout'
+// import { services } from '../data/services'
 
 export default function ServiceRoutes() {
   return (
