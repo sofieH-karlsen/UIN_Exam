@@ -52,8 +52,9 @@ h2{
 }
 
 .nav{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .active-nav {
@@ -61,5 +62,5 @@ h2{
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
-
+  
 }

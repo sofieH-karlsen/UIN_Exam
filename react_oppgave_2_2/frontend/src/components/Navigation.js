@@ -2,12 +2,13 @@ import { NavLink } from 'react-router-dom'
 
 export default function Navigation() {
   const linkStyle = ({ isActive }) => ({
-    border: isActive ? '2px solid #a9a9a9' : 'none', 
+    border: isActive ? '2px solid #a9a9a9' : 'none',
+    
     
   })
   return (
     <nav className="nav">
-      <NavLink to="/" style={linkStyle}>
+      <NavLink to="/" className="active-nav" >
         {/* TODO: Change "to"? MAKE BIGGER */}
         <h1 data-testid="logo">Tjenesteweb</h1>
       </NavLink>
