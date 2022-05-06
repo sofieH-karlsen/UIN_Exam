@@ -4,7 +4,7 @@ import Filter from './Filter'
 
 export default function Services() {
   return (
-    <main>
+    <main className="services">
       <h2 data-testid="title">Alle tjenester</h2>
       <Filter />
     </main>

@@ -1,4 +1,4 @@
-//import { hexColors } from '../../../../react_oppgave_2_del_1/src/data/services'
+import { hexColors } from '../../../../react_oppgave_2_del_1/src/data/services'
 
 // TODO: Denne egner seg for /ny
 

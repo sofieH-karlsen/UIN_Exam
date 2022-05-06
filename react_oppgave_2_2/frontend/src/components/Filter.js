@@ -7,7 +7,7 @@ export default function Filter() {
   return (
     <>
       <label htmlFor="search">
-        Søk:
+        
         <input
           data-testid="search"
           id="search"

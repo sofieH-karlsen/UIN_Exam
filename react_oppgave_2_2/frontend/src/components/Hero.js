@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section data-testid="hero">
+    <section data-testid="hero" className="hero">
       <div>
         <cite data-testid="cite">
           «Vi tilbyr alle tjenester til alle mennesker over alt. Rett og slett
