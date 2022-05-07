@@ -1,3 +1,5 @@
+import Sirkler from "../img/sirkler.png"
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -8,7 +10,7 @@ export default function Hero() {
         </cite>
         <span>CEO, Tjenesteweb</span>
       </div>
-      <div className="circles">Sirkler</div>
+      <img src={Sirkler} alt="circles" className="circles"/>
     </section>
   )
 }
