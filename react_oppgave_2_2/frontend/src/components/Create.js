@@ -38,10 +38,10 @@ export default function Create() {
           />
         </label>
         <label htmlFor="box">
-          <span>Farge på boks*</span>
+          <span>Boks*</span>
           <select data-testid="form_box" name="box" id="box">
             <option disabled value="">
-              Velg hex-farge
+              Velg farge på boksen her
             </option>
             {hexColors.map((hex) => (
               <option key={hex} value={hex}>
@@ -51,7 +51,7 @@ export default function Create() {
           </select>
         </label>
         <button data-testid="form_submit" type="submit">
-          Lag tjeneste
+          Lag ny tjeneste
         </button>
         {/* TODO: Vis riktig p avhengig av tilstanden */}
         <p data-testid="form_error">Fyll ut alle felter med *</p>

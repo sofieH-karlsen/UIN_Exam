@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',  'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -114,29 +114,72 @@ main{
   grid-area: main;
   margin: 3rem 4rem;
   max-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2{
+    flex: 0;
+  }  
+
+  #search{
+    border-radius: 5px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  //DET SOM STÅR UNDER GJELDER SERVICE.JS
+  form{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1rem;
   
-
-  // .services{
+    label{
+      font-weight: 700;
+      display:flex;
+      flex-direction: column; 
+      gap: 0.7rem;
       
+      span{
+        flex: 1 0 auto;
+      }
 
-    
-  // }
-  // label{
-      input{
-        border-radius: 5px;
-        padding: 0.5rem;
-        box-shadow: none;
-        margin-bottom: 1rem;
-      }  
-    // }
+      input, select{
+          border-radius: 5px;
+          box-shadow: none;
+          background-color: rgb(240, 240, 240);
+          border-color: rgb(182, 182, 182);
+          flex: 1 0 1;
+      }
+    } 
+    input, button, select{
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button{
+      background-color: rgb(22, 188, 135);
+      color: white;
+      border-radius: 5px;
+      max-width: 50%;
+      margin-top: 1rem;
+    }
+  }
 
   .ofCards{
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  
+    margin:0;
+    
+    p{
+      align-self: center;
+    }
+
     .card{
-    flex: 0 25% 15%;
+    flex: 0 1 20%;
+    min-width: 12rem;
     max-height: 50%;
     background-color: rgb(101, 215, 215);
     padding: 1.5rem;
@@ -144,6 +187,11 @@ main{
     flex-direction: column;
     gap: 0.7rem;
     } 
+
+    .cardLink{
+      color: black;
+    }
+
   }
   // .servicePage{
   
@@ -152,20 +200,6 @@ main{
 
 }  
 
-input{
-  font-size: 10px;
-  margin-bottom: 10px;
-  display:flex;
-  flex-direction: column;
-
-}
-
-button{
-  color: green;
-}
-
-
-// service
 
 
 aside{

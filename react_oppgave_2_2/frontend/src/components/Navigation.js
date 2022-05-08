@@ -5,6 +5,10 @@ export default function Navigation() {
   const linkStyle = ({ isActive }) => ({
     borderBottom: isActive ? '2px solid #a9a9a9' : 'none',
   })
+
+  const styleBox = ({ isActive }) => ({
+    backgroundColor: isActive ? 'turquoise' : 'none',
+  })
   /* GJØRE OM DENNE TIL UNDERLINE */
 
   return (
@@ -22,7 +26,7 @@ export default function Navigation() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="active-nav newService" to="/ny" style={linkStyle}>
+          <NavLink className="active-nav newService" to="/ny" style={styleBox}>
             Ny tjeneste
           </NavLink>
         </li>
