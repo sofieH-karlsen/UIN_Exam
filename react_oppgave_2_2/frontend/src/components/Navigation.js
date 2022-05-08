@@ -7,7 +7,7 @@ export default function Navigation() {
   })
 
   const styleBox = ({ isActive }) => ({
-    backgroundColor: isActive ? 'turquoise' : 'none',
+    backgroundColor: isActive ? 'turquoise' : 'teal' ,
   })
   /* GJØRE OM DENNE TIL UNDERLINE */
 
