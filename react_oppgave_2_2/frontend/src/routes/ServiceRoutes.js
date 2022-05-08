@@ -4,17 +4,16 @@ import Service from '../components/Service'
 import Create from '../components/Create'
 import NoMatch from '../components/NoMatch'
 import Layout from '../layout/Layout'
-// import { services } from '../data/services'
 
 export default function ServiceRoutes() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Services />} />
-        <Route path="tjenester" element={<Services />} />
-        <Route path="tjenester/valgt-tjeneste" element={<Service />} />
-        {/* TODO: passe på at det er "tjenester" foran uansett om man går inn fra forsiden eller "TJENESTER" 
-        denne gjør det til den du har klikket på {services.slug} brukte jeg tidligere */}
+        <Route path="/" element={<Services />} />
+        <Route path="tjenester">
+          <Route index element={<Services />} />
+          <Route path="slug" element={<Service />} />
+        </Route>
         <Route path="ny" element={<Create />} />
         <Route path="*" element={<NoMatch />} />
       </Route>

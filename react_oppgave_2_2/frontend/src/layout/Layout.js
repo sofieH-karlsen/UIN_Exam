@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 export default function Layout() {
   return (
     <div className="container">
-      <header>{/* COOMPONENT? */}
+      <header>{/* COMPONENT? */}
         <Navigation />
         <Hero />
       </header>
