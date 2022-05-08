@@ -28,8 +28,6 @@ export default function Filter() {
               service.title.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
               return service.title
-            } else {
-              console.log('no found')
             }
           })
           .map((service) => (
@@ -39,7 +37,7 @@ export default function Filter() {
               preamble={service.preAmble}
               link={service.slug}
             />
-          ))
+          )) 
           }
         {/*<p data-testid="empty">Ingen tjenester</p>*/}
       </section>
