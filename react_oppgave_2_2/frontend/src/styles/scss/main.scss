@@ -61,7 +61,7 @@ header{
     color: black;
     text-decoration: none;
     cursor: pointer; //Dette er standard for linker?
-    border-radius: 5px;
+    
     }
 
     .underline{
@@ -77,6 +77,7 @@ header{
         color: white;
         padding: 0.7rem 1.4rem;
         box-shadow: 2px;
+        border-radius: 5px;
       }
     }
   }  
