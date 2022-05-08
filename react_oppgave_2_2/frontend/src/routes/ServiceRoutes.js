@@ -12,7 +12,7 @@ export default function ServiceRoutes() {
         <Route path="/" element={<Services />} />
         <Route path="tjenester">
           <Route index element={<Services />} />
-          <Route path="slug" element={<Service />} />
+          <Route path="/tjenester/unik" element={<Service />} />
         </Route>
         <Route path="ny" element={<Create />} />
         <Route path="*" element={<NoMatch />} />
