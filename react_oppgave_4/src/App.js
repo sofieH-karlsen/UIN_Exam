@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 import { useEffect, useState } from 'react'
 // TODO: createGame har en TODO som må ferdigstilles
-import { createGame } from './starter_files/start'
+import { createGame } from './components/start'
 
 export default function App() {
   const [game, setGame] = useState(null)
