@@ -6,7 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import features from "./features";
 import service from "./service";
 import initialContent from "./initialContent";
-import portableText from "./text";
+//import portableText from "./text";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
