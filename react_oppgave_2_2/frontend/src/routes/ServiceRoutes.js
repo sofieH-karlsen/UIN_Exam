@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import Services from '../components/Services'
-import Service from '../components/Service'
-import Create from '../components/Create'
-import NoMatch from '../components/NoMatch'
 import Layout from '../layout/Layout'
+import Services from '../pages/Services'
+import Service from '../pages/Service'
+import Create from '../pages/Create'
+import NoMatch from '../pages/NoMatch'
 
 export default function ServiceRoutes() {
   return (

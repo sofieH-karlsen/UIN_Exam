@@ -1,8 +1,8 @@
-import Sirkler from "../img/sirkler.png"
+import Sirkler from '../img/sirkler.png'
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section data-testid="hero" className="hero">
       <div className="leftHero">
         <cite data-testid="cite">
           «Vi tilbyr alle tjenester til alle mennesker over alt. Rett og slett
@@ -10,7 +10,9 @@ export default function Hero() {
         </cite>
         <span>CEO, Tjenesteweb</span>
       </div>
-      <img src={Sirkler} alt="circles" className="circles"/>
+      <div data-testid="circles">
+        <img src={Sirkler} alt="circles" className="circles" />
+      </div>
     </section>
   )
 }

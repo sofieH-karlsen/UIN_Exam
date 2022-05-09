@@ -179,7 +179,8 @@ main{
     }
 
     .card{
-    flex: 0 1 20%;
+    flex: 0 0 20%;
+    // TODO: ENDRE PROPORSJONER, Statisk størrelse
     min-width: 12rem;
     max-height: 50%;
     background-color: rgb(101, 215, 215);

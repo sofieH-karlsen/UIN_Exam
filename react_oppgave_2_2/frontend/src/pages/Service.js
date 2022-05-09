@@ -1,14 +1,13 @@
 import { services } from '../data/services'
-import Title from './Title'
+import Title from '../components/Title'
 
-// TODO: Denne egner seg for /tjenester/en-eller-annen-tjeneste
 // TODO: kan nås med /tjenester/valgt-tjeneste
 
 export default function Service() {
   // const selectedService = select.target.value;
   return services.map((eachService) => (
     <div key={eachService.key}>
-      <main className="servicePage">
+      <main>
         <h2 data-testid="service_title">
           <Title title={eachService.title} />
         </h2>

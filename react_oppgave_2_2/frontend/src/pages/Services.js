@@ -1,7 +1,7 @@
 // TODO: Denne egner seg for /tjenester og /
 
-import Filter from './Filter'
-import Title from './Title'
+import Filter from '../components/Filter'
+import Title from '../components/Title'
 
 export default function Services() {
   return (

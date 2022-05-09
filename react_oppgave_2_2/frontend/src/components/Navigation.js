@@ -1,3 +1,6 @@
+// TODO: fjerne overflødige klasser
+// TODO: Viktig! Bytte funksjon til å være avhengig av classname=underline
+
 import { NavLink } from 'react-router-dom'
 import Title from './Title'
 
@@ -7,26 +10,40 @@ export default function Navigation() {
   })
 
   const styleBox = ({ isActive }) => ({
-    backgroundColor: isActive ? 'turquoise' : 'teal' ,
+    backgroundColor: isActive ? 'turquoise' : 'teal',
   })
   /* GJØRE OM DENNE TIL UNDERLINE */
 
   return (
     <nav>
-      <NavLink to="/" className="active-nav" style={linkStyle}>
-        {/* TODO: Change "to"? MAKE BIGGER */}
-        <h1 data-testid="logo">
+      <h1 data-testid="logo">
+        <NavLink
+          data-testid="logo_link"
+          to="/"
+          className="active-nav"
+          style={linkStyle}
+        >
           <Title title="Tjenesteweb" />
-        </h1>
-      </NavLink>
-      <ul>
-        <li>
-          <NavLink className="active-nav" to="/tjenester" style={linkStyle}>
+        </NavLink>
+      </h1>
+      <ul data-testid="nav">
+        <li data-testid="nav_services">
+          <NavLink
+            data-testid="services_link"
+            className="active-nav"
+            to="/tjenester"
+            style={linkStyle}
+          >
             Tjenester
           </NavLink>
         </li>
-        <li>
-          <NavLink className="active-nav newService" to="/ny" style={styleBox}>
+        <li data-testid="nav_new">
+          <NavLink
+            data-testid="create_link"
+            className="active-nav newService"
+            to="/ny"
+            style={styleBox}
+          >
             Ny tjeneste
           </NavLink>
         </li>

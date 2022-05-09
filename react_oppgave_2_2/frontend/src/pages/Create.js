@@ -1,7 +1,5 @@
 import { hexColors } from '../data/services'
-import Title from './Title'
-
-// TODO: Denne egner seg for /ny
+import Title from '../components/Title'
 
 export default function Create() {
   return (

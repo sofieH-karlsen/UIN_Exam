@@ -18,7 +18,7 @@ export default function Filter() {
           }}
         />
       </label>
-      <section className="ofCards">
+      <section data-testid="services" className="ofCards">
         {services
           .filter((service) => {
             if (searchTerm === '') {
