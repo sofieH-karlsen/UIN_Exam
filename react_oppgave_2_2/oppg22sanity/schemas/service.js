@@ -1,59 +1,58 @@
+import initialContent from "./initialContent";
+
 export default {
-  title: 'Service',
   name: 'service',
+  title: 'Service',
   type: 'document',
   fields: [
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string',
-    },
-    {
-      title: 'Slug',
-      name: 'slug',
-      type: 'slug',
-    },
-    {
-      title: 'Slogan',
-      name: 'slogan',
-      type: 'string',
-    },
-    {
-      title: 'InitialContent',
       name: 'initialContent',
-      type: 'object', 
-      fields: [
-        {
-          title: 'Title',
-          name: 'initialTitle',
-          type: 'string',
-        },
-        {
-          title: 'Text',
-          name: 'initialText',
-          type: 'text',
-        },
-      ],
+      title: 'Initial Content',
+      type: 'initialContent',
+      // initialValue: {
+      //   title: `${title.name} er viktig`,
+      //   portableText: `${title} lorem ipsum`,
+      // },
     },
     {
-      title: 'Preamble',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      options: {
+         source: 'title',
+         slugify: (input) => input.toLowerCase()
+         .replace(/\s+/g, '-')
+         .slice(0, 80),
+      },
+      // isUnique: true,
+    },
+    {
+      name: 'slogan',
+      title: 'Slogan',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'preamble',
+      title: 'Preamble',
       type: 'string',
-    },
+      validation: (Rule) => Rule.required(),
+      // initialValue: {document.value},
+      // 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore'
+        // type: '_title',
+        // source:(title) => title.current,
+      // },
+    }, 
+
     {
-      title: 'Text',
-      name: 'portableText',
-      type: 'array',
-      of: [
-        {
-          type: 'block'
-        }
-      ],
-    },
-    {
-      title: 'Box',
       name: 'box',
+      title: 'Box',
       type: 'string',
+      validation: (Rule) => Rule.required(),
+      // initialValue: '#',
+      // options: {
+      // }
     },
   ],
 }
