@@ -3,10 +3,10 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
-import features from "./features";
+// import features from "./features";
 import service from "./service";
 import initialContent from "./initialContent";
-//import portableText from "./text";
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -16,7 +16,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */ 
-    features,
+    // features,
     service,
     initialContent,
   ]),
