@@ -36,8 +36,8 @@ export default function Flavours() {
 
   return (
     <>
-      <Title title={flavour.value} />
       <section id="options" data-testid="options">
+        <Title title={flavour.value} />
         <div className="option" data-testid="flavours" id="flavours">
           <label htmlFor="flavour">
             <select
@@ -48,7 +48,11 @@ export default function Flavours() {
               /* Inspo: https://www.geeksforgeeks.org/how-to-change-a-selects-options-based-on-another-dropdown-using-react/ */
             >
               {options.map((option) => (
-                <option value={option.value} key={option.value}>
+                <option
+                  data-testid="option"
+                  value={option.value}
+                  key={option.value}
+                >
                   {option.name}
                   {/* kode fra: https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react */}
                 </option>
