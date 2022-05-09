@@ -1,5 +1,6 @@
 /* eslint-disable no-plusplus */
 import { useEffect, useState } from 'react'
+import Game from './components/Game'
 // TODO: createGame har en TODO som må ferdigstilles
 import { createGame } from './components/start'
 
@@ -13,5 +14,5 @@ export default function App() {
     setGame(createGame(0))
   }, [])
 
-  return <h1>Sjekk starter_files</h1>
+  return <Game />
 }
