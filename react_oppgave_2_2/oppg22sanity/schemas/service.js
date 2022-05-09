@@ -1,18 +1,12 @@
-import initialContent from "./initialContent";
-
 export default {
   name: 'service',
   title: 'Service',
   type: 'document',
   fields: [
     {
-      name: 'initialContent',
-      title: 'Initial Content',
-      type: 'initialContent',
-      // initialValue: {
-      //   title: `${title.name} er viktig`,
-      //   portableText: `${title} lorem ipsum`,
-      // },
+      name: 'title',
+      title: 'Navn på tjeneste',
+      type: 'string',
     },
     {
       name: 'slug',
@@ -25,13 +19,12 @@ export default {
          .replace(/\s+/g, '-')
          .slice(0, 80),
       },
-      // isUnique: true,
+      isUnique: true,
     },
     {
-      name: 'slogan',
-      title: 'Slogan',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      name: 'initialContent',
+      title: 'Initial Content',
+      type: 'initialContent',
     },
     {
       name: 'preamble',
@@ -43,8 +36,13 @@ export default {
         // type: '_title',
         // source:(title) => title.current,
       // },
-    }, 
-
+    },
+    {
+      name: 'slogan',
+      title: 'Slogan',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
     {
       name: 'box',
       title: 'Box',
