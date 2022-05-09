@@ -8,11 +8,14 @@ export default function App() {
   const [game, setGame] = useState(null)
 
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
+  const lvl = 0
 
   useEffect(() => {
     // TODO: 0 må byttes ut med noe dynamisk
-    setGame(createGame(0))
+    setGame(createGame(lvl))
   }, [])
 
-  return <Game />
+  console.log(game)
+
+  return <Game game={game} />
 }

@@ -1,11 +1,9 @@
 // TODO: Nødvendig props
 import BullsEye from './Bullseye'
 import Header from './Header'
-import { createGame } from './start'
 
-export default function Game() {
+export default function Game(game) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
-  createGame(0)
 
   return (
     <>
