@@ -2,9 +2,8 @@
 import BullsEye from './Bullseye'
 import Header from './Header'
 
-export default function Game(game) {
+export default function Game({ game, nextLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
-
   return (
     <>
       <Header />
@@ -17,6 +16,7 @@ export default function Game(game) {
           className="col-span-4 w-full rounded-xl border-2 border-emerald-100 p-8 text-lg font-bold text-emerald-500 shadow-lg shadow-emerald-100"
           type="button"
           data-testid="next"
+          onClick={nextLvl}
         >
           Neste runde
         </button>

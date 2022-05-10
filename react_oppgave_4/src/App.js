@@ -6,16 +6,18 @@ import { createGame } from './components/start'
 
 export default function App() {
   const [game, setGame] = useState(null)
+  const [lvl, setLvl] = useState(0)
 
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
-  const lvl = 0
+  const nextLvl = () => {
+    setLvl((lv) => lv + 1)
+    console.log(lvl)
+  }
 
   useEffect(() => {
     // TODO: 0 må byttes ut med noe dynamisk
     setGame(createGame(lvl))
-  }, [])
+  }, [lvl])
 
-  console.log(game)
-
-  return <Game game={game} />
+  return <Game game={game} nextLvl={nextLvl} />
 }
