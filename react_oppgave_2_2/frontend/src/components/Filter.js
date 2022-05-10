@@ -38,6 +38,8 @@ export default function Filter() {
               title={service.title}
               preamble={service.preAmble}
               link={service.slug}
+              //searchTerm={searchTerm}
+              searchTerm={setSearchTerm}
             />
           ))
           }
