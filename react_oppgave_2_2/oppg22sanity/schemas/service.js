@@ -31,10 +31,7 @@ export default {
       title: 'Preamble',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      initialValue: 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore',
-        // type: '_title',
-        // source:(title) => title.current,
-      // },
+      initialValue: 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore', 
     },
     {
       name: 'slogan',
@@ -44,12 +41,11 @@ export default {
     },
     {
       name: 'box',
-      title: 'Box',
+      title: 'Box ',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-      // initialValue: '#',
-      // options: {
-      // }
+      description: 'HEX fargekode',
+      isUnique: true,
+      initialValue: '#ABCDEF',
     },
   ],
 }
