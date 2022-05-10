@@ -12,6 +12,7 @@ export default function App() {
   const nextLvl = () => {
     setLvl((lv) => lv + 1)
     console.log(lvl)
+    console.log(game)
   }
 
   useEffect(() => {

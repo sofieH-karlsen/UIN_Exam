@@ -4,6 +4,7 @@ import Header from './Header'
 
 export default function Game({ game, nextLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
+
   return (
     <>
       <Header />
