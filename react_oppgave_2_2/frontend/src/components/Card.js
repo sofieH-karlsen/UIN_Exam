@@ -17,8 +17,8 @@ export default function Card({ key, title, preamble, searchTerm }) {
         data-testid="services_url"
         className="cardLink"
         to="/tjenester/unik"
-        onClick={(services) => {
-          searchTerm(services.target.value)}}
+        //onClick={(services) => {
+          //searchTerm(services.target.value)}}
       >
         {/* (props)} to={link} to="/tjenester/valgt-tjeneste" onClick={(select) => Service(select)} }*/} {/*TODO: Gjøre at når du klikker her blir det registrert hvilken URL du har valgt å gå inn på  */}
         {/* to={services.slug} to={slug} */}
