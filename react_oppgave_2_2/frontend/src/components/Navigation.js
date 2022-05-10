@@ -12,6 +12,8 @@ export default function Navigation() {
   const styleBox = ({ isActive }) => ({
     backgroundColor: isActive ? 'turquoise' : 'teal',
   })
+
+
   /* GJØRE OM DENNE TIL UNDERLINE */
 
   return (

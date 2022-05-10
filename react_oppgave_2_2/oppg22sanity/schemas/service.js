@@ -31,8 +31,7 @@ export default {
       title: 'Preamble',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      // initialValue: {document.value},
-      // 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore'
+      initialValue: 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore',
         // type: '_title',
         // source:(title) => title.current,
       // },
