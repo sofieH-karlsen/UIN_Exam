@@ -1,7 +1,7 @@
 // TODO: Nødvendig props
 // TODO: Dynamisk verdi må byttes ut
 
-export default function Header() {
+export default function Header({ max }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
 
   return (
@@ -13,7 +13,7 @@ export default function Header() {
         >
           Dynamisk verdi
         </span>
-        poeng (<span data-testid="total">Dynamisk verdi</span>)
+        poeng (<span data-testid="total">{max}</span>)
       </h1>
     </header>
   )

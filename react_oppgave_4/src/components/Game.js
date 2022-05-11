@@ -8,9 +8,12 @@ export default function Game({ game, nextLvl }) {
   const knapper = game.buttons
   console.log(knapper)
 
+  const maxPoint = game.total
+  console.log(maxPoint)
+
   return (
     <>
-      <Header />
+      <Header max={maxPoint} />
       <div data-testid="game" className="grid grid-cols-4 gap-6">
         {/* TODO: Må skrive ut antall knapper et spill skal vise */}
         {/* TODO: Må bruke riktig komponent og sende data som props */}
