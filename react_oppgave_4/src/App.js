@@ -18,5 +18,5 @@ export default function App() {
     setGame(createGame(lvl))
   }, [lvl])
 
-  return <Game game={game} nextLvl={increaseLvl} />
+  return <Game game={game} nextLvl={increaseLvl} setLvl={setLvl} />
 }

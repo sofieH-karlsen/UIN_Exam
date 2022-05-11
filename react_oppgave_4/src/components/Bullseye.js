@@ -1,11 +1,20 @@
 // TODO: Nødvendig props
 // TODO: Dynamisk verdi må byttes ut
 
-export default function BullsEye({ color, point, setPoints }) {
+export default function BullsEye({ color, point, setPoints, setLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
 
+  const gameOver = () => {
+    setLvl(0)
+    setPoints(0)
+  }
+
   const increasePoints = () => {
-    setPoints((p) => p + point)
+    if (point < 0) {
+      gameOver()
+    } else {
+      setPoints((p) => p + point)
+    }
   }
 
   return (
