@@ -54,19 +54,18 @@ const createButton = (color) => {
  */
 
 const validGame = (prop) => {
-  // const redExists = prop.some((obj) => obj.color === 'red')
+  const redExists = prop.some((obj) => obj.color === 'red')
   const pointExists = prop.some(
     (obj) => obj.color === 'green' || 'blue' || 'purple'
   )
 
   console.log(prop)
   console.log(pointExists)
-  // console.log(redExists)
+  console.log(redExists)
 
-  // if (redExists === true && pointExists === true) {
-  //   return true
-  // }
-  return true
+  if (redExists === true && pointExists === true) {
+    return true
+  }
 }
 
 export const createGame = (currentLevel) => {
