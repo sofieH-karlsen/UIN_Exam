@@ -6,7 +6,7 @@ export default function Game({ game, nextLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
   console.log(game)
   const knapper = game.buttons
-  console.log(knapper)
+  console.log(knapper.length)
 
   return (
     <>
