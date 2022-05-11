@@ -6,6 +6,8 @@ import Header from './Header'
 export default function Game({ game, nextLvl, setLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
   const [points, setPoints] = useState(0)
+
+  /* Inspo from: https://www.telerik.com/blogs/how-to-show-and-hide-elements-in-react */
   const [hidden, setHidden] = useState(true)
 
   const knapper = game.buttons

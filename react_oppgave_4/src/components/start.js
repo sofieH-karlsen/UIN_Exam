@@ -54,14 +54,11 @@ const createButton = (color) => {
  */
 
 const validGame = (prop) => {
+  /* Løsning inspo fra "Checking if Array of Objects Includes Object": https://stackabuse.com/javascript-check-if-array-contains-a-value-element/  */
   const redExists = prop.some((obj) => obj.color === 'red')
   const pointExists = prop.some(
     (obj) => obj.color === 'green' || 'blue' || 'purple'
   )
-
-  console.log(prop)
-  console.log(pointExists)
-  console.log(redExists)
 
   if (redExists === true && pointExists === true) {
     return true
