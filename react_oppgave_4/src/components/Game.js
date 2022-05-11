@@ -6,7 +6,7 @@ export default function Game({ game, nextLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
   console.log(game)
   const knapper = game.buttons
-  console.log(knapper.length)
+  console.log(knapper)
 
   return (
     <>
@@ -14,8 +14,9 @@ export default function Game({ game, nextLvl }) {
       <div data-testid="game" className="grid grid-cols-4 gap-6">
         {/* TODO: Må skrive ut antall knapper et spill skal vise */}
         {/* TODO: Må bruke riktig komponent og sende data som props */}
-
-        <BullsEye buttons={knapper} />
+        {knapper.map((button) => (
+          <BullsEye color={button.color} point={button.point} />
+        ))}
         {/* TODO: Kun vise denne knappen når en runde er ferdig */}
         <button
           className="col-span-4 w-full rounded-xl border-2 border-emerald-100 p-8 text-lg font-bold text-emerald-500 shadow-lg shadow-emerald-100"

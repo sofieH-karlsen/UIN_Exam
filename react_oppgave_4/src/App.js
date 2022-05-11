@@ -5,8 +5,8 @@ import Game from './components/Game'
 import { createGame } from './components/start'
 
 export default function App() {
-  const [game, setGame] = useState([])
-  const [lvl, setLvl] = useState(2)
+  const [game, setGame] = useState(createGame(0))
+  const [lvl, setLvl] = useState(0)
 
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
   const nextLvl = () => {
