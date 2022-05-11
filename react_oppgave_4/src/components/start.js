@@ -81,5 +81,6 @@ export const createGame = (currentLevel) => {
   if (validGame()) {
     return { buttons, total }
   }
+
   return createGame(level)
 }

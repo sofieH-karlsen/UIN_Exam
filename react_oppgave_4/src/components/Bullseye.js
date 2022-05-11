@@ -22,8 +22,8 @@ export default function BullsEye({ color, point, setPoints, setLvl, open }) {
       type="button"
       className={
         open
-          ? `open ${color} flex h-36 w-36 items-center justify-center p-8 shadow shadow-slate-200`
-          : null
+          ? `${color} flex h-36 w-36 items-center justify-center p-8 shadow shadow-slate-200`
+          : 'hidden'
       }
       data-color={color}
       data-point={point}
