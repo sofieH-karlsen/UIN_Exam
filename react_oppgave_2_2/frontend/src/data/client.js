@@ -1,8 +1,10 @@
 import sanityClient from '@sanity/client'
 
 const options = {
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET_NAME,
+  projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
+  dataset: process.env.REACT_APP_SANITY_DATASET_NAME,
+  token: process.env.REACT_APP_TOKEN,
+  apiVersion: '2021-03-25',
 }
 
 const client = sanityClient({
