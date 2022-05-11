@@ -1,7 +1,7 @@
 // TODO: Nødvendig props
 // TODO: Dynamisk verdi må byttes ut
 
-export default function BullsEye({ color, point, setPoints, setLvl }) {
+export default function BullsEye({ color, point, setPoints, setLvl, open }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
 
   const gameOver = () => {
@@ -20,7 +20,11 @@ export default function BullsEye({ color, point, setPoints, setLvl }) {
   return (
     <button
       type="button"
-      className={`${color} flex h-36 w-36 items-center justify-center p-8 shadow shadow-slate-200`}
+      className={
+        open
+          ? `open ${color} flex h-36 w-36 items-center justify-center p-8 shadow shadow-slate-200`
+          : null
+      }
       data-color={color}
       data-point={point}
       data-testid="button"

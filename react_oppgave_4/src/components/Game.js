@@ -1,19 +1,27 @@
 // TODO: Nødvendig props
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import BullsEye from './Bullseye'
 import Header from './Header'
 
 export default function Game({ game, nextLvl, setLvl }) {
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
   const [points, setPoints] = useState(0)
-  const knapper = game.buttons
+  const [hidden, setHidden] = useState(true)
 
+  const knapper = game.buttons
   const maxPoint = game.total
 
   const newLvl = () => {
     nextLvl()
     setPoints(0)
   }
+  useEffect(() => {
+    if (points >= maxPoint) {
+      setHidden(false)
+    } else {
+      setHidden(true)
+    }
+  }, [maxPoint, points])
 
   return (
     <>
@@ -27,11 +35,16 @@ export default function Game({ game, nextLvl, setLvl }) {
             point={button.point}
             setPoints={setPoints}
             setLvl={setLvl}
+            open={hidden}
           />
         ))}
         {/* TODO: Kun vise denne knappen når en runde er ferdig */}
         <button
-          className="col-span-4 w-full rounded-xl border-2 border-emerald-100 p-8 text-lg font-bold text-emerald-500 shadow-lg shadow-emerald-100"
+          className={
+            hidden
+              ? 'hidden'
+              : 'col-span-4 w-full rounded-xl border-2 border-emerald-100 p-8 text-lg font-bold text-emerald-500 shadow-lg shadow-emerald-100'
+          }
           type="button"
           data-testid="next"
           onClick={newLvl}
