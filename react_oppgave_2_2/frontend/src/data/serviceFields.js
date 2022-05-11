@@ -1,4 +1,4 @@
-import client from './client';
+import client from './client'
 
 const serviceFields = `
     title, 
@@ -6,12 +6,12 @@ const serviceFields = `
     initialContent, 
     preamble, 
     slogan, 
-    box
+    box,
 `
 export const getData = async (slug) => {
-    const data = await client.fetch(
-      `*[_type == "data" && slug.current == $slug]{${serviceFields}}`,
-      { slug }
-    )
-    return data
-  }
+  const data = await client.fetch(
+    `*[_type == "service" && slug.current == $slug]{${serviceFields}}`,
+    { slug }
+  )
+  return data
+}

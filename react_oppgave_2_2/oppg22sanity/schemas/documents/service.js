@@ -25,24 +25,13 @@ export default {
       name: 'initialContent',
       title: 'Initial Content',
       type: 'initialContent',
-      /* initialValue: [
-        {
-          title: 'er viktig',
-          portableText: [
-            {
-              _type: 'block',
-              string: 'LOREM IPSUM' 
-            }
-          ]
-        }
-      ],*/
     },
     {
       name: 'preamble',
       title: 'Preamble',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      initialValue: 'er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore', 
+      initialValue: '...Tjenesten... er lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore', 
     },
     {
       name: 'slogan',
