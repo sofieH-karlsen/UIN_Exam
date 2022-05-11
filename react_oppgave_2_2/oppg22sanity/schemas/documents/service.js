@@ -30,8 +30,8 @@ export default {
       type: 'initialContent',
     },
     {
-      name: 'preamble',
-      title: 'Preamble',
+      name: 'preAmble',
+      title: 'PreAmble',
       type: 'string',
       description: 'Kort om tjenesten',
       validation: (Rule) => Rule.required(),

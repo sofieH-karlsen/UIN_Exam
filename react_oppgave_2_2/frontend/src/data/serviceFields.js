@@ -4,7 +4,7 @@ const serviceFields = `
     title, 
     'slug': slug.current
     initialContent, 
-    preamble, 
+    preAmble, 
     slogan, 
     box,
 `

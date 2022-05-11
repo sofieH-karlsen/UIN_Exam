@@ -130,16 +130,33 @@ main{
   }
 
   //DET SOM STÅR UNDER GJELDER SERVICE.JS
+  .formQuote{
+    display:flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem 0 3rem 0;
+
+    cite{
+      font-style: italic;
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+    span{
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+  }
+
   form{
     flex: 1;
     display: flex;
     flex-direction: column;
     margin: 0;
     gap: 1rem;
-  
+ 
     label{
       font-weight: 700;
-      display:flex;
+      display: flex;
       flex-direction: column; 
       gap: 0.7rem;
       
@@ -148,11 +165,11 @@ main{
       }
 
       input, select{
-          border-radius: 5px;
-          box-shadow: none;
-          background-color: rgb(240, 240, 240);
-          border-color: rgb(182, 182, 182);
-          flex: 1 0 1;
+        border-radius: 5px;
+        box-shadow: none;
+        background-color: rgb(240, 240, 240);
+        border-color: rgb(182, 182, 182);
+        flex: 1 0 1;
       }
     } 
     input, button, select{
