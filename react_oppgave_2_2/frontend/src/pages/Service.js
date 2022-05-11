@@ -34,6 +34,7 @@ export default function Service() {
       </main>
       <aside>
         {/* TODO: Bytte ut Farge med riktig dynamisk verdi */}
+        {/* Portable text how to: https://www.sanity.io/docs/presenting-block-text#234900ff90d0 */}
         <div data-testid="service_box" data-color="Farge">
           Boks design selectedColor: {eachService.box}
         </div>

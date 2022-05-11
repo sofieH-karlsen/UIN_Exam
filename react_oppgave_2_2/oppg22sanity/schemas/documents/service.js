@@ -25,6 +25,17 @@ export default {
       name: 'initialContent',
       title: 'Initial Content',
       type: 'initialContent',
+      /* initialValue: [
+        {
+          title: 'er viktig',
+          portableText: [
+            {
+              _type: 'block',
+              string: 'LOREM IPSUM' 
+            }
+          ]
+        }
+      ],*/
     },
     {
       name: 'preamble',
@@ -46,6 +57,7 @@ export default {
       description: 'HEX fargekode',
       isUnique: true,
       initialValue: '#ABCDEF',
+      validation: (Rule) => Rule.required().min(4).max(7),
     },
   ],
 }

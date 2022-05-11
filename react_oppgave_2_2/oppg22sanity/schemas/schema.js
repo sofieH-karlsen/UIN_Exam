@@ -4,8 +4,8 @@ import createSchema from "part:@sanity/base/schema-creator";
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
 // import features from "./features";
-import service from "./service";
-import initialContent from "./initialContent";
+import service from "./documents/service";
+import initialContent from "./objects/initialContent";
 
 
 // Then we give our schema to the builder and provide the result to Sanity
