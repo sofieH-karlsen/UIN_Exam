@@ -8,6 +8,7 @@ const serviceFields = `
     slogan, 
     box,
 `
+
 export const getData = async (slug) => {
   const data = await client.fetch(
     `*[_type == "service" && slug.current == $slug]{${serviceFields}}`,

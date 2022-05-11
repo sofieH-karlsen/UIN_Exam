@@ -9,12 +9,12 @@ export default {
       type: "string",
       validation: (Rule) => Rule.required(),
       isUnique: true,
+      initialValue: '[Ny tjeneste] er viktig',
     },
     {
       name: "portableText",
       title: "Portable Text",
-      type: 'array',
-
+      type: "array",
       of: [
         {
           type: "block",
@@ -23,3 +23,4 @@ export default {
     },
   ],
 }
+

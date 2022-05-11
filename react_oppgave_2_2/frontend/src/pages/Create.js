@@ -51,7 +51,7 @@ export default function Create() {
         <button data-testid="form_submit" type="submit">
           Lag ny tjeneste
         </button>
-        {/* TODO: Vis riktig p avhengig av tilstanden */}
+        {/* TODO: Vis riktig <p> avhengig av tilstanden */}
         <p data-testid="form_error">Fyll ut alle felter med *</p>
         <p data-testid="form_success">Skjema sendt</p>
       </form>
