@@ -9,10 +9,8 @@ export default function App() {
   const [lvl, setLvl] = useState(0)
 
   // TODO: Legge til nødvendig logikk. Hvis nødvendig.
-  const nextLvl = () => {
+  const increaseLvl = () => {
     setLvl((lv) => lv + 1)
-    console.log(lvl)
-    console.log(game)
   }
 
   useEffect(() => {
@@ -20,5 +18,5 @@ export default function App() {
     setGame(createGame(lvl))
   }, [lvl])
 
-  return <Game game={game} nextLvl={nextLvl} />
+  return <Game game={game} nextLvl={increaseLvl} />
 }
