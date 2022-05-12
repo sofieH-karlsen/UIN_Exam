@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { services } from '../data/services'
 import Card from './Card'
-import { getData } from '../data/serviceFields'
- 
-export default function Filter() {
+
+export default function Filter({ services }) {
   const [searchTerm, setSearchTerm] = useState('')
+
   return (
     <>
       <label htmlFor="search">
@@ -14,33 +13,26 @@ export default function Filter() {
           name="search"
           type="search"
           placeholder="Søk etter tjenester her"
-          onChange={(getData) => {
-            setSearchTerm(getData.target.value)
+          onChange={(event) => {
+            setSearchTerm(event.target.value)
           }}
         />
       </label>
       <section data-testid="services" className="ofCards">
-        {services
-          .filter((service) => {
+        {services?.filter(() => {
             if (searchTerm === '') {
               return services
             }
             if (
-              service.title.toLowerCase().includes(searchTerm.toLowerCase())
+              services.title.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
-              return service.title
+              return services.title
             } else {
               console.log('no found')
             }
           })
-          .map((service) => (
-            <Card
-              key={service.key}
-              title={service.title}
-              preamble={service.preAmble}
-              link={service.slug}
-              //searchTerm={searchTerm}
-              searchTerm={setSearchTerm}
+          .map((services) => (
+            <Card services={services}
             />
           ))
           }

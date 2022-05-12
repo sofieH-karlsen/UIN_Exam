@@ -10,10 +10,15 @@ const serviceFields = `
     box,
 `
 
+export const getServices = async () => {
+  const data = await client.fetch(`*[_type == "service"]{${serviceFields}}`)
+  return data
+}
+
 export const getData = async (slug) => {
   const data = await client.fetch(
     `*[_type == "service" && slug.current == $slug]{${serviceFields}}`,
     { slug }
   )
-  return data
+  return data?.[0]
 }

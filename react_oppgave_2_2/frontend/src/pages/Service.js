@@ -1,10 +1,35 @@
+// import { useState, useEffect } from 'react'
+// import { useParams } from 'react-router-dom'
+// import { getData } from '..data/serviceFields'
 import { services } from '../data/services'
 import Title from '../components/Title'
-
 
 // TODO: kan nås med /tjenester/valgt-tjeneste
 
 export default function Service() {
+  // const [service, setService] = useState(null)
+  // const [loading, setLoading] = useState(null)
+  // const [error, setError] = useState(null)
+  // const { slug } = useParams()
+
+  // useEffect(() => {
+  //   const getServiceData = async () => {
+  //     setLoading(true)
+  //     try {
+  //       const serviceData = await getData(slug)
+  //       setService(serviceData)
+  //     } catch (error) {
+  //       console.log(error)
+  //       setError(error)
+  //     } finally {
+  //       setLoading(false)
+  //     }
+  //   }
+  //   getServiceData()
+  // }, [slug])
+  // console.log('oki')
+  // if (!service && error) return <div>noe gikk galt...</div>
+  // if (!service && loading) return <div>Henter service...</div>
   // const selectedService = select.target.value;
   return services.map((eachService) => (
     <div key={eachService.key}>
