@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import { hexColors } from '../data/services'
 
-export default function ServiceForm({ onSubmit, error, success }) {
+export default function ServiceForm({ onSubmit, loading, error, success }) {
   const [title, setTitle] = useState('')
   const [slug, setSlug] = useState('')
   const [slogan, setSlogan] = useState('')
   const [preAmble, setPreAmble] = useState('')
   const [box, setBox] = useState('')
+  // const [formValues, setFormValues] = useState({})
+
+  // const handleValidate = () => {
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // handleValidate(error, success)
     onSubmit({
       title,
       slug,
@@ -102,7 +107,7 @@ export default function ServiceForm({ onSubmit, error, success }) {
         </select>
       </label>
       <button data-testid="form_submit" type="submit">
-        Lag ny tjeneste
+        {loading ? 'Lagres...' : 'Lag ny tjeneste'}
       </button>
       {/* TODO: endre utseende på knapp? Ekstra */}
       {/* TODO: Vis riktig <p> avhengig av tilstanden */}
