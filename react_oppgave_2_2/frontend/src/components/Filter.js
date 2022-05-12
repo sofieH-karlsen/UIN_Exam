@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { services } from '../data/services'
 import Card from './Card'
-
+import { getData } from '../data/serviceFields'
+ 
 export default function Filter() {
   const [searchTerm, setSearchTerm] = useState('')
   return (
@@ -13,8 +14,8 @@ export default function Filter() {
           name="search"
           type="search"
           placeholder="Søk etter tjenester her"
-          onChange={(event) => {
-            setSearchTerm(event.target.value)
+          onChange={(getData) => {
+            setSearchTerm(getData.target.value)
           }}
         />
       </label>

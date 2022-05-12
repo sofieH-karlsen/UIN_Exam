@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import Title from './Title'
 // import Service from './Service'
-import { services } from '../data/services'
+import { getData } from '../data/serviceFields'
 
 
-export default function Card({ key, title, preamble, searchTerm }) {
+export default function Card({ key, title, preamble, slug, }) {
   //const card = {services}
   //const data = card.map((services)) => {card.services}
   return (
@@ -17,14 +17,14 @@ export default function Card({ key, title, preamble, searchTerm }) {
         data-testid="services_url"
         className="cardLink"
         to="/tjenester/unik"
+        onClick={getData}
         //onClick={(services) => {
           //searchTerm(services.target.value)}}
       >
         {/* (props)} to={link} to="/tjenester/valgt-tjeneste" onClick={(select) => Service(select)} }*/} {/*TODO: Gjøre at når du klikker her blir det registrert hvilken URL du har valgt å gå inn på  */}
         {/* to={services.slug} to={slug} */}
         Til tjeneste
-        {/*<p>Til tjeneste {slug}</p>*/}
-        {/*<p>Til tjeneste {card.slug}</p>*/}
+
       </NavLink>
     </article>
   )

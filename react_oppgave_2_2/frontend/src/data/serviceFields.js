@@ -2,8 +2,9 @@ import client from './client'
 
 const serviceFields = `
     title, 
-    'slug': slug.current
-    initialContent, 
+    key,
+    'slug': slug.current,
+    'initialContent': initialContent.portableText, 
     preAmble, 
     slogan, 
     box,
