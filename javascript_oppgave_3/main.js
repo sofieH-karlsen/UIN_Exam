@@ -31,116 +31,130 @@
  */
 
 // #### START HER ####
-const startHere = "Her kommer din kode";
+const stepOne = document.getElementById("step_one");
+const stepTwo = document.getElementById("step_two");
+const stepThree = document.getElementById("step_three");
 
-let currentTab = 0;
+const steps = document.getElementsByClassName("step");
 
-showTab(currentTab)
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const submitBtn = document.getElementById("send");
 
-function showTab(n){
-  let tab = document.getElementsByClassName('step');
-  tab[n].style.display = 'block';
-  if(n == 0){
-    document.getElementById('prev').style.display = 'none';
-  } else {
-    document.getElementById('prev').style.display = 'block';
-  }
+const form = document.querySelector("form");
+const layout = document.getElementById("layout");
 
-  if(n == (tab.length - 1)){
-    document.getElementById('send').style.display = 'block';
-  } else {
-    document.getElementById('next').style.display = 'block';
+const errorText = document.getElementsByClassName("error");
+
+const nameInput = document.getElementById("name");
+const mailInput = document.getElementById("email");
+const ageInput = document.getElementById("age");
+
+const h1 = document.createElement("h1");
+const submitText = document.createTextNode("Takk, ditt skjema er sendt");
+
+let current = 0;
+
+const first = () => {
+  stepOne.hidden = false;
+  stepTwo.hidden = true;
+  stepThree.hidden = true;
+
+  nextBtn.hidden = false;
+  prevBtn.hidden = true;
+  submitBtn.hidden = true;
+};
+
+const second = () => {
+  stepOne.hidden = true;
+  stepTwo.hidden = false;
+  stepThree.hidden = true;
+
+  nextBtn.hidden = false;
+  prevBtn.hidden = false;
+  submitBtn.hidden = true;
+};
+
+const third = () => {
+  stepOne.hidden = true;
+  stepTwo.hidden = true;
+  stepThree.hidden = false;
+
+  nextBtn.hidden = true;
+  prevBtn.hidden = false;
+  submitBtn.hidden = false;
+};
+
+function changeStep() {
+  if (current === 0) {
+    first();
+  } else if (current === 1) {
+    second();
+  } else if (current === 2) {
+    third();
   }
 }
 
-function navigateForm(n){
-  let formStep = document.getElementsByClassName('step');
-  if(n == 1 && !validateForm()) return false;
-  formStep[currentTab].style.display = 'none';
-  currentTab = currentTab + n;
-  if(currentTab >= formStep.length){
-    document.getElementById('send').submit();
-    return false;
-  }
+const next = () => {
+  /* Make input into array and use .includes to validate */
+  steps[current].classList.remove("active");
+  current++;
+  steps[current].classList.add("active");
+  changeStep();
+};
 
-  showTab(currentTab);
-}
+const prev = () => {
+  steps[current].classList.remove("active");
+  current--;
+  steps[current].classList.add("active");
+  changeStep();
+};
 
-function validateFields(){
-  let tabs, input, valid = true;
-  tabs = document.getElementsByClassName('step');
-  input = tabs[currentTab].getElementsByTagName('input');
-  for(let i = 0; i < input.length; i++){
-    if(input[i].value = ''){
-      input[i].className += 'error';
-      valid = false;
+const validate = () => {
+  if (current === 0) {
+    const nameArray = Array.from(nameInput.value);
+    /* from https://www.samanthaming.com/tidbits/83-4-ways-to-convert-string-to-character-array/ */
+
+    if (nameArray.includes(" ") && nameArray.length >= 10) {
+      errorText[current].hidden = true;
+      next();
+    } else {
+      errorText[current].hidden = false;
+    }
+  } else if (current === 1) {
+    const mailArray = Array.from(mailInput.value);
+
+    if (mailArray.includes("@")) {
+      errorText[current].hidden = true;
+      next();
+    } else {
+      errorText[current].hidden = false;
+    }
+  } else if (current === 2) {
+    const age = Number(ageInput.value);
+    /* from https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l */
+
+    if (age >= 18) {
+      errorText[current].hidden = true;
+
+      layout.style.display = "none";
+      /* from https://stackoverflow.com/questions/14886276/html-how-to-make-a-blank-page */
+
+      h1.appendChild(submitText);
+      document.body.appendChild(h1);
+      /* from https://www.w3schools.com/jsref/met_document_createelement.asp */
+    } else {
+      errorText[current].hidden = false;
     }
   }
-  if(valid){
-    document.getElementsByClassName('step') += 'finished';
-  }
-  return valid;
-}
+};
+const onSubmit = (event) => {
+  event.preventDefault();
+  validate();
+};
 
-function formNavigation(n){
-  let activeSteps, i = document.getElementsByClassName('step');
-  for(i = 0; i < activeSteps.length; i++ ){
-    activeSteps[i].className = activeSteps[i].className.replace(" active", "");
-  }
-  activeSteps[n] += 'active';
-}
+nextBtn.addEventListener("click", validate);
+prevBtn.addEventListener("click", prev);
 
+form.addEventListener("submit", onSubmit);
 
-/* Sofies noe mulig fungerende løsning
-let currentTab = 1;
-
-const tabsList = document.getElementsByClassName("step");
-const tab1 = document.getElementById("step_one")
-const tab2 = document.getElementById("step_two")
-const tab3 = document.getElementById("step_three")
-
-const nextBtn = document.getElementById("next")
-const prevBtn = document.getElementById("prev")
-const sendBtn = document.getElementById("send")
-
-
-const switchTab = () => {
-  if(currentTab == 1){
-    tab1.hidden = false
-    tab2.hidden = true
-    prevBtn.hidden = true
-  } else if(currentTab == 2){
-    tab1.hidden = true
-    tab2.hidden = false
-    tab3.hidden = true
-    prevBtn.hidden = false
-    nextBtn.hidden = false
-    sendBtn.hidden = true
-  }else if(currentTab == 3){
-    tab1.hidden = true
-    tab2.hidden = true
-    tab3.hidden = false
-    nextBtn.hidden = true
-    sendBtn.hidden = false
-  }
-}
-
-const nextTab =()=>{
-  // Gjøre det slikt at currentTab ikke kan bli mer enn 3 eller mindre enn 1
-  if (currentTab >= 1 && currentTab < tabsList.length){
-    currentTab +=1
-    switchTab()
-  }
-}
-
-const prevTab =()=>{
-  if (currentTab >= 1 && currentTab <= tabsList.length){
-    currentTab -=1
-    switchTab()
-  }
-}
-
-nextBtn.addEventListener("click", nextTab)
-
-prevBtn.addEventListener("click", prevTab)
-*/
