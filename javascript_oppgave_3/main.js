@@ -50,6 +50,9 @@ const nameInput = document.getElementById("name");
 const mailInput = document.getElementById("email");
 const ageInput = document.getElementById("age");
 
+const h1 = document.createElement("h1");
+const submitText = document.createTextNode("Takk, ditt skjema er sendt");
+
 let current = 0;
 
 const first = () => {
@@ -135,12 +138,11 @@ const validate = () => {
       errorText[current].hidden = true;
 
       layout.style.display = "none";
-
-      const h1 = document.createElement("h1");
-      const submitText = document.createTextNode("Takk, ditt skjema er sendt");
+      /* from https://stackoverflow.com/questions/14886276/html-how-to-make-a-blank-page */
 
       h1.appendChild(submitText);
       document.body.appendChild(h1);
+      /* from https://www.w3schools.com/jsref/met_document_createelement.asp */
     } else {
       errorText[current].hidden = false;
     }
@@ -148,7 +150,6 @@ const validate = () => {
 };
 const onSubmit = (event) => {
   event.preventDefault();
-  console.log("submit");
   validate();
 };
 
