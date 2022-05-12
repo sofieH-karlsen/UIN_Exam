@@ -35,6 +35,8 @@ const stepOne = document.getElementById("step_one");
 const stepTwo = document.getElementById("step_two");
 const stepThree = document.getElementById("step_three");
 
+const steps = document.getElementsByClassName("step");
+
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const submitBtn = document.getElementById("send");
@@ -44,7 +46,7 @@ const form = document.querySelector("form");
 const errorMsg = document.getElementsByClassName("error");
 const submitMsg = "Takk, ditt skjema er sendt";
 
-let current = 1;
+let current = 0;
 
 const first = () => {
   stepOne.hidden = false;
@@ -54,8 +56,6 @@ const first = () => {
   nextBtn.hidden = false;
   prevBtn.hidden = true;
   submitBtn.hidden = true;
-
-
 };
 
 const second = () => {
@@ -79,25 +79,27 @@ const third = () => {
 };
 
 function changeStep() {
-  if (current == 1) {
+  if (current === 0) {
     first();
-  } else if (current == 2) {
+  } else if (current === 1) {
     second();
-  } else if (current == 3) {
+  } else if (current === 2) {
     third();
   }
-
-  console.log(current);
 }
 
 const next = () => {
+  steps[current].classList.remove("active");
   current++;
+  steps[current].classList.add("active");
   changeStep();
 };
 
 const prev = () => {
+  steps[current].classList.remove("active");
   current--;
-  changeStep()
+  steps[current].classList.add("active");
+  changeStep();
 };
 
 function onSubmit() {
