@@ -89,6 +89,7 @@ function changeStep() {
 }
 
 const next = () => {
+/* Make input into array and use .includes to validate */
   steps[current].classList.remove("active");
   current++;
   steps[current].classList.add("active");
