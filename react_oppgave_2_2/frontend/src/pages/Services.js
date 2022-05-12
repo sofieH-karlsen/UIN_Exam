@@ -33,7 +33,7 @@ export default function Services() {
       </h2>
       {!services && error ? <div>noe gikk galt...</div> : null}
       {!services && loading ? <div>Henter service...</div> : null}
-      {JSON.stringify(services)}
+      {/* {JSON.stringify(services)} */}
       <Filter services={services} />
     </main>
   )

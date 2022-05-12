@@ -30,7 +30,7 @@ export default {
       type: 'initialContent',
     },
     {
-      name: 'preAmble',
+      name: 'preamble',
       title: 'PreAmble',
       type: 'string',
       description: 'Kort om tjenesten',

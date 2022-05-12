@@ -7,9 +7,13 @@ export const createService = async (newService) => {
     await client.create({
       _type: 'service',
       title,
-      slug: slug.current,
+      slug: {
+        _type: 'slug',
+        current: slug,
+      },
+      /* ^ Tips fra Omar C på Discord-serveren */
       slogan,
-      preAmble,
+      preamble: preAmble,
       box,
     })
   } catch (error) {
@@ -17,6 +21,6 @@ export const createService = async (newService) => {
   }
 }
 
-/*
+/* TODO:
 Have slug be generated
 */
