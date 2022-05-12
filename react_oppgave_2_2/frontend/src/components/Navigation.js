@@ -13,7 +13,6 @@ export default function Navigation() {
     backgroundColor: isActive ? 'turquoise' : 'teal',
   })
 
-
   /* GJØRE OM DENNE TIL UNDERLINE */
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Card from './Card'
 
+
 export default function Filter({ services }) {
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -31,8 +32,8 @@ export default function Filter({ services }) {
               console.log('no found')
             }
           })
-          .map((services) => (
-            <Card services={services}
+          .map((service) => (
+            <Card service={service}
             />
           ))
           }
