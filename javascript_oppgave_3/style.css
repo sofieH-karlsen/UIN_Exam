@@ -8,7 +8,7 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
 *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
+  /* all: unset; */
   display: revert;
 }
 
@@ -164,7 +164,6 @@ button{
 
 #next{
   background-color: var(--green);
-
 }
 
 #prev {
@@ -174,6 +173,7 @@ button{
 #send {
   background-color: var(--blue);
 }
+
 
 .active {
   background-color: var(--green);  
