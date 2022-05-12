@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { createService } from '../data/createService'
 import Title from '../components/Title'
 import ServiceForm from '../components/ServiceForm'
@@ -6,16 +7,26 @@ import ServiceForm from '../components/ServiceForm'
 export default function Create() {
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const onSubmit = async (data) => {
+    setLoading(true)
     setError(false)
     setSuccess(false)
+    // handleValidate()
 
     try {
       await createService(data)
       setSuccess(true)
+      setTimeout(() => {
+        navigate('/tjenester')
+      }, 500)
+      /* Kilde: https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks */
     } catch (error) {
       setError(true)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -30,7 +41,12 @@ export default function Create() {
         </cite>
         <span>CEO, Tjenesteweb</span>
       </div>
-      <ServiceForm onSubmit={onSubmit} error={error} success={success} />
+      <ServiceForm
+        onSubmit={onSubmit}
+        loading={loading}
+        error={error}
+        success={success}
+      />
     </main>
   )
 }

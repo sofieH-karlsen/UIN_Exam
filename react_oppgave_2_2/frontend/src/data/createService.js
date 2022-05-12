@@ -7,7 +7,7 @@ export const createService = async (newService) => {
     await client.create({
       _type: 'service',
       title,
-      slug,
+      slug: slug.current,
       slogan,
       preAmble,
       box,

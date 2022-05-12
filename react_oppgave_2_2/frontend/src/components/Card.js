@@ -3,8 +3,7 @@ import Title from './Title'
 // import Service from './Service'
 import { getData } from '../data/serviceFields'
 
-
-export default function Card({ key, title, preamble, slug, }) {
+export default function Card({ key, title, preamble, slug }) {
   //const card = {services}
   //const data = card.map((services)) => {card.services}
   return (
