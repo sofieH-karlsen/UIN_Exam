@@ -43,8 +43,12 @@ const submitBtn = document.getElementById("send");
 
 const form = document.querySelector("form");
 
-const errorMsg = document.getElementsByClassName("error");
-const submitMsg = "Takk, ditt skjema er sendt";
+const errorText = document.getElementsByClassName("error");
+const submitText = "Takk, ditt skjema er sendt";
+
+const nameInput = document.getElementById("name");
+const mailInput = document.getElementById("email");
+const ageInput = document.getElementById("age");
 
 let current = 0;
 
@@ -89,7 +93,7 @@ function changeStep() {
 }
 
 const next = () => {
-/* Make input into array and use .includes to validate */
+  /* Make input into array and use .includes to validate */
   steps[current].classList.remove("active");
   current++;
   steps[current].classList.add("active");
@@ -103,38 +107,46 @@ const prev = () => {
   changeStep();
 };
 
-function onSubmit() {
-  const submitMsg = document.createElement("h1").innerHTML;
-  return submitMsg;
-}
+const onSubmit = (event) => {
+  event.preventDefault;
+  validate();
+};
 
-nextBtn.addEventListener("click", next);
+const validate = () => {
+  if (current === 0) {
+    const nameArray = Array.from(nameInput.value);
+    /* from https://www.samanthaming.com/tidbits/83-4-ways-to-convert-string-to-character-array/ */
+
+    if (nameArray.includes(" ") && nameArray.length >= 10) {
+      errorText[current].hidden = true;
+      next();
+    } else {
+      errorText[current].hidden = false;
+    }
+  } else if (current === 1) {
+    const mailArray = Array.from(mailInput.value);
+
+    if (mailArray.includes("@")) {
+      errorText[current].hidden = true;
+      next();
+    } else {
+      errorText[current].hidden = false;
+    }
+  } else if (current === 2) {
+    const age = Number(ageInput.value);
+    /* from https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l */
+
+    if (age >= 18) {
+      errorText[current].hidden = true;
+      document.getElementsByTagName("main").hidden = true;
+      document.createElement("h1").innerHTML = submitText;
+    } else {
+      errorText[current].hidden = false;
+    }
+  }
+};
+
+nextBtn.addEventListener("click", validate);
 prevBtn.addEventListener("click", prev);
 
-submitBtn.addEventListener("submit", (event) => {
-  onSubmit(), event.preventDefault();
-});
-
-// TODO VALIDATION
-//Sources:
-// https://www.w3schools.com/js/js_validation.asp
-// https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
-
-// const inputValue = form[${name}].value;? Har ikke "name-attributt"
-
-// const validateForm = () => {
-//   let nameVal = () =>
-// };
-
-// TODO errorMsg
-//Errors
-// //HIDDEN ON STEP 1
-
-// // HIDDEN UNTIL STEP 3
-// const handleSubmit = (event) => {
-//     event.preventDefault()
-//     //"Print text: submitMsg
-//     console.log("Submitted")
-//   // ONLY IF VERIFIED
-//   // Form submitted, "Submit"/POST ACTION
-// };
+submitBtn.addEventListener("submit", onSubmit);
