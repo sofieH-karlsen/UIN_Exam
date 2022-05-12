@@ -107,11 +107,6 @@ const prev = () => {
   changeStep();
 };
 
-const onSubmit = (event) => {
-  event.preventDefault;
-  validate();
-};
-
 const validate = () => {
   if (current === 0) {
     const nameArray = Array.from(nameInput.value);
@@ -138,15 +133,18 @@ const validate = () => {
 
     if (age >= 18) {
       errorText[current].hidden = true;
-      document.getElementsByTagName("main").hidden = true;
-      document.createElement("h1").innerHTML = submitText;
     } else {
       errorText[current].hidden = false;
     }
   }
 };
+const onSubmit = (event) => {
+  event.preventDefault();
+  console.log("submit");
+  validate();
+};
 
 nextBtn.addEventListener("click", validate);
 prevBtn.addEventListener("click", prev);
 
-submitBtn.addEventListener("submit", onSubmit);
+form.addEventListener("submit", onSubmit);
