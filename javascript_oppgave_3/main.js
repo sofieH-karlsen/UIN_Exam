@@ -42,9 +42,9 @@ const prevBtn = document.getElementById("prev");
 const submitBtn = document.getElementById("send");
 
 const form = document.querySelector("form");
+const layout = document.getElementById("layout");
 
 const errorText = document.getElementsByClassName("error");
-const submitText = "Takk, ditt skjema er sendt";
 
 const nameInput = document.getElementById("name");
 const mailInput = document.getElementById("email");
@@ -133,6 +133,14 @@ const validate = () => {
 
     if (age >= 18) {
       errorText[current].hidden = true;
+
+      layout.style.display = "none";
+
+      const h1 = document.createElement("h1");
+      const submitText = document.createTextNode("Takk, ditt skjema er sendt");
+
+      h1.appendChild(submitText);
+      document.body.appendChild(h1);
     } else {
       errorText[current].hidden = false;
     }
