@@ -94,27 +94,76 @@ meter {
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
   --background: rgb(34, 114, 139);
   --white: #ffffff;
+
+}
+
+main {
+  margin: auto 5rem;
+  padding: 5rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+#layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr;  
+  grid-template-areas: 
+    "nav"
+    "sections"
+    "buttons";
+}
+
+nav ul {
+  grid-area: nav;
+  display:flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+nav ul li{
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--input);
+  display:flex;
+  align-content: center;
+  justify-content: center;
+}
+
+section{
+  flex-flow: column;
+  gap: 2rem;
+}
+
+
+label {
+  flex-basis: 1;
+  grid-area: sections;
+
 }
 
 input {
   padding: 10px;
-  border: 1px solid var(--green);
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px rgb(190, 190, 190);
-  width: 100%;
+  margin: 1rem;
+  background-color: var(--input);
+  border: 1px solid var(--input-border);
+  border-radius: var(--box-border-width);
+  box-shadow: var(--box-shadow);
 }
 
-#step_one, #step_two, #step_three{
-  padding: 10px;
+#next,#prev,#send, nav ul li {
+  border-radius: var(--box-border-width);
+  padding:0.5rem;
+  max-width: 30%;
 }
 
-#next {
+button{
+  grid-area: buttons;
+}
+
+#next{
   background-color: var(--green);
-  padding: 10px;
-  border: 1px solid var(--green);
-  border-radius: 5%;
-  box-shadow: 3px 3px 3px rgb(190, 190, 190);
-  width: 10%;
 }
 
 #prev {
@@ -125,28 +174,7 @@ input {
   background-color: var(--blue);
 }
 
-#grid{
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 
-    "nav nav nav"
-    "form form form"
-    "button button button"
-  ;
-}
 
-ul li{
-  width: 100%;
-  display: inline;
-  grid-area: nav;
-}
-
-#form{
-  grid-area: form;
-}
-
-#buttons{
-  grid-area: button;
-  display: flex;
+.active {
+  background-color: var(--green);  
 }
