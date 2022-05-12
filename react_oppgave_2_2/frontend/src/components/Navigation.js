@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import Title from './Title'
 
 export default function Navigation() {
-  const linkStyle = ({ isActive }) => ({
+  const underline = ({ isActive }) => ({
     borderBottom: isActive ? '2px solid #a9a9a9' : 'none',
   })
 
@@ -23,7 +23,7 @@ export default function Navigation() {
           data-testid="logo_link"
           to="/"
           className="active-nav"
-          style={linkStyle}
+          style={underline}
         >
           <Title title="Tjenesteweb" />
         </NavLink>
@@ -34,7 +34,7 @@ export default function Navigation() {
             data-testid="services_link"
             className="active-nav"
             to="/tjenester"
-            style={linkStyle}
+            style={underline}
           >
             Tjenester
           </NavLink>

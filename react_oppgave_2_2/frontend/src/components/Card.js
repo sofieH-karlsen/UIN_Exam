@@ -23,10 +23,11 @@ export default function Card({ services }) {
         to={services.link}
         // onClick={getService}
       >
-         TODO: Gjøre at når du klikker her blir det registrert hvilken URL du har valgt å gå inn på  */}
-      {/* to={services.slug} to={slug} 
+     
         Til tjeneste
         </NavLink> */}
     </article>
   )
 }
+    {/*TODO: Gjøre at når du klikker her blir det registrert hvilken URL du har valgt å gå inn på  */}
+      {/* to={services.slug} to={slug}*/}
