@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Card from './Card'
 
-
-export default function Filter({ services }) {
+export default function Filter({ services, slug }) {
   const [searchTerm, setSearchTerm] = useState('')
   /* TODO: unique key*/
+  const aService = services?.find((aService) => aService?.slug === slug);
 
   return (
     <>
@@ -33,9 +33,10 @@ export default function Filter({ services }) {
               console.log('no found')
             } 
           })
-          .map((services) => (
+          .map((aService) => (
             <Card 
-            services={services}
+            services={aService}
+            slug={slug}
             />
           ))
           }

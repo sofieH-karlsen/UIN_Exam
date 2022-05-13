@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { getService } from '../data/serviceFields'
 import Title from './Title'
 
 export default function Card({ services }) {
@@ -10,20 +11,21 @@ export default function Card({ services }) {
     <article
       data-testid="service_wrapper"
       className="card"
-      key={services?.id}
+      key={services?.key}
+      id={services?.id}
       // style={styleCard}
     >
       <h3 data-testid="services_title">
         <Title title={services?.title} />
       </h3>
       <p data-testid="services_preamble">{services?.preAmble}</p>
-      <NavLink
+      <Link
         data-testid="services_url"
         className="cardLink"
-        to={`tjenester/${services?.slug}`}
+        to={`/tjenester/${services?.slug}`}
       >
         Til tjeneste
-      </NavLink>
+      </Link>
     </article>
   )
 }

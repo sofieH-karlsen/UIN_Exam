@@ -9,6 +9,7 @@ export default function Services() {
   const [services, setServices] = useState(null)
   const [loading, setLoading] = useState(null)
   const [error, setError] = useState(null)
+  // const [boxColor, setBoxColor] = useState('white')
 
   useEffect(() => {
     const getServicesData = async () => {
@@ -34,7 +35,7 @@ export default function Services() {
       {!services && error ? <div>Noe gikk galt...</div> : null}
       {!services && loading ? <div>Henter tjenester...</div> : null}
       {/* {JSON.stringify(services)} */}
-      <Filter services={services} getServices={getServices}/>
+      <Filter services={services} />
     </main>
   )
 }

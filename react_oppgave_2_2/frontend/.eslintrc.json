@@ -4,8 +4,9 @@
       "version": "detect"
     }
   },
+  
   "root": true,
-  "extends": ["airbnb", "prettier", "plugin:jsx-a11y/recommended", "@sanity/eslint-config-studio", "@babel/preset-env"],
+  "extends": ["airbnb", "prettier", "plugin:jsx-a11y/recommended", "@babel/preset-env"],
   "plugins": ["html", "prettier", "react-hooks", "jsx-a11y", "@babel"],
   "rules": {
     
