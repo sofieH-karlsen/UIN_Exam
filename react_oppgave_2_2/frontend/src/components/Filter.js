@@ -4,7 +4,7 @@ import Card from './Card'
 
 export default function Filter({ services }) {
   const [searchTerm, setSearchTerm] = useState('')
-  //TODO: unique key
+  /* TODO: unique key*/
 
   return (
     <>
@@ -49,6 +49,7 @@ export default function Filter({ services }) {
 // KILDE filter: https://www.youtube.com/watch?v=mZvKPtH9Fzo
 
 
+//   //TODO: unique key
 
 // annen ide
 // export default function Filter( { services, getServices }) {
@@ -56,7 +57,6 @@ export default function Filter({ services }) {
 //   const [loading, setLoading] = useState(null)
 //   const [services, filterServices] = useState([])
   
-//   //TODO: unique key
 //   useEffect(
 //   const handleFilter(services, getServices) => 
 //     {searchTerm === ''
