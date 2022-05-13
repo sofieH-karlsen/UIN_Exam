@@ -1,5 +1,5 @@
 export default function ServiceBox({ service }) {
-  ;<aside>
+  <aside>
     {/* TODO: Bytte ut Farge med riktig dynamisk verdi */}
 
     <div data-testid="service_box" data-color="Farge">

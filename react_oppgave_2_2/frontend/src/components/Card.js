@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getService } from '../data/serviceFields'
 import Title from './Title'
+import { services } from '../data/services'
 
 export default function Card({ services }) {
   // const styleCard = ({ isVisible }) => ({
