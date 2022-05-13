@@ -5,14 +5,14 @@ import Service from '../pages/Service'
 import Create from '../pages/Create'
 import NoMatch from '../pages/NoMatch'
 
-export default function ServiceRoutes({slug}) {
+export default function ServiceRoutes({ slug }) {
   return (
     <Routes>
       <Route element={<Layout />}>
+        <Route index element={<Services slug={slug} />} />
         <Route path="/" element={<Services />} />
-        <Route path="tjenester">
-          <Route index element={<Services />} />
-          <Route path= {slug} element={<Service />} />
+        <Route path="tjenester" >
+          <Route path="slug" element={<Service />} />
         </Route>
         <Route path="ny" element={<Create />} />
         <Route path="*" element={<NoMatch />} />
