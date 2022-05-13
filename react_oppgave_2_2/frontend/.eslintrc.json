@@ -5,9 +5,10 @@
     }
   },
   "root": true,
-  "extends": ["airbnb", "prettier", "plugin:jsx-a11y/recommended"],
+  "extends": ["airbnb", "prettier", "plugin:jsx-a11y/recommended", "@sanity/eslint-config-studio", "@babel/preset-env"],
   "plugins": ["html", "prettier", "react-hooks", "jsx-a11y", "@babel"],
   "rules": {
+    
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -45,6 +46,7 @@
         "allowTaggedTemplates": true
       }
     ],
+    
     "no-param-reassign": [
       2,
       {
@@ -102,7 +104,7 @@
         "printWidth": 80,
         "endOfLine": "auto"
       }
-    ],
+    ],  
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/no-noninteractive-element-interactions": [
       "error",
@@ -133,3 +135,4 @@
     "jest": true
   }
 }
+

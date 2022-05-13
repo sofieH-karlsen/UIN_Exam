@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "eslint-plugin-babel": "^5.3.1"
+  }
+}

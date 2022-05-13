@@ -113,7 +113,7 @@ header{
 main{
   grid-area: main;
   margin: 3rem 4rem;
-  max-width: 70vw;
+  
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -288,11 +288,11 @@ footer{
     }
 
 
-  main{
-    width: 80%;
+  .services{
     margin: 3rem 4rem;
     display: flex;
-    flex-direction: column;
+    
+    align-content: flex-start;
     gap: 1rem;
   
     #search{
@@ -305,6 +305,7 @@ footer{
         flex-wrap: wrap;
         flex-direction: row;
         text-align: center;
+        
         
     }
 
@@ -322,9 +323,6 @@ footer{
       .cardLink{
         color: black;
       }
-
-    
-  .services{height: 20%;}
   .footer {width: 80%;}
       }
     }
