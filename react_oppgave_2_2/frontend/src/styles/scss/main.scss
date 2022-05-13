@@ -233,7 +233,7 @@ footer{
   align-items: flex-end;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1024px){
 
   header{
     max-height: 250px;
@@ -305,8 +305,23 @@ footer{
         flex-wrap: wrap;
         flex-direction: row;
         text-align: center;
-        gap: 1.2rem;
+        
     }
+
+    .card{
+      flex: 0 0 20%;
+      min-width: 12rem;
+      max-height: 50%;
+      background-color: rgb(101, 215, 215);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      } 
+  
+      .cardLink{
+        color: black;
+      }
 
     
   .services{height: 20%;}
