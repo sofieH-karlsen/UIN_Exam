@@ -26,10 +26,8 @@ export default function Service() {
     }
     getServiceData()
   }, [slug])
-  console.log('oki')
   
-  // const selectedService = select.target.value;
-  return service.map((service) => (
+  return service?.map((service) => (
     <div key={service?.key}>
       <main>
       {(!service && error) ? <div>noe gikk galt...</div> : null}
@@ -37,14 +35,14 @@ export default function Service() {
         <h2 data-testid="service_title">
           <Title title={service?.title} />
         </h2>
-        <section>
+        <section className="quote">
           {/* TODO: Bytte ut med riktig dynamisk verdi */}
           <span data-testid="service_slogan">"{service?.slogan}" - </span>
           <span>CEO, Tjenesteweb</span>
         </section>
         <section>
           {/* TODO: Bytte ut med riktig dynamisk verdi */}
-          <p data-testid="service_preamble">{service?.preAmble}</p>
+          <p data-testid="service_preamble">{service?.preamble}</p>
           {/* TODO: Bytte ut med riktig dynamisk verdi */}
           <h3 data-testid="service_content_title">
             {service?.initialTitle}
@@ -55,7 +53,7 @@ export default function Service() {
           </p>
           <article data-testid="service_text">
             {/* Her kommer tekst fra "text" laget i Ny */}
-            {/* Portable text how to: https://www.sanity.io/docs/presenting-block-text#234900ff90d0 */}
+            {/*//TODO Portable text how to: https://www.sanity.io/docs/presenting-block-text#234900ff90d0 */}
           </article>
         </section>
       </main>

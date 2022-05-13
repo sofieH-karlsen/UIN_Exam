@@ -35,7 +35,7 @@ export default function Create() {
       <h2 data-testid="title">
         <Title title="Lag ny tjeneste" />
       </h2>
-      <div className="formQuote">
+      <div className="quote">
         <cite data-testid="cite">
           «Hvis vi ikke har en tjeneste, så lager vi en»
         </cite>

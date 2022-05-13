@@ -65,4 +65,14 @@ export default {
       },
     },
   ],
-}
+  preview: {
+    select: {
+      name: "title",
+      id: "_id",
+    },
+    prepare({ name, id }) {
+      return {
+        title: `${name}`,
+        subtitle: `ID: ${id}`
+    }}},
+};

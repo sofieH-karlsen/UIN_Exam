@@ -1,11 +1,12 @@
 import client from './client'
 
 export const createService = async (newService) => {
-  const { title, slug, slogan, preAmble, box } = newService
+  const { title, slug, slogan, preamble, box } = newService
 
   try {
     await client.create({
       _type: 'service',
+      _key,
       title,
       slug: {
         _type: 'slug',
@@ -13,7 +14,7 @@ export const createService = async (newService) => {
       },
       /* ^ Tips fra Omar C på Discord-serveren */
       slogan,
-      preamble: preAmble,
+      preamble,
       box,
     })
   } catch (error) {

@@ -1,7 +1,9 @@
+import { useParams } from 'react-router-dom'
 import ServiceRoutes from './routes/ServiceRoutes'
 
 export default function App() {
   // TODO: Legg til om nødvendig logikk her
-  return <ServiceRoutes />
+  const { slug } = useParams
+  return <ServiceRoutes slug={slug}/>
 }
-/* service={service} setService={setService} onChange={getServiceData} */
+

@@ -4,6 +4,7 @@ import Card from './Card'
 
 export default function Filter({ services }) {
   const [searchTerm, setSearchTerm] = useState('')
+  //TODO: unique key
 
   return (
     <>
@@ -15,7 +16,7 @@ export default function Filter({ services }) {
           type="search"
           placeholder="Søk etter tjenester her"
           onChange={(event) => {
-            setSearchTerm(event.target.value)
+            setSearchTerm(event?.target.value)
           }}
         />
       </label>
@@ -25,22 +26,45 @@ export default function Filter({ services }) {
               return services
             }
             if (
-              services.title.toLowerCase().includes(searchTerm.toLowerCase())
+              services?.title?.toLowerCase().includes(searchTerm.toLowerCase())
             ) {
-              return services.title
+              return services?.title
             } else {
               console.log('no found')
-            }
+            } 
           })
-          .map((service) => (
-            <Card service={service}
+          .map((services) => (
+            <Card 
+            services={services}
             />
           ))
           }
-        {/*<p data-testid="empty">Ingen tjenester</p>*/}
+        {/* TODO: Hvis ingen tjenester ved filtrering. Vis denne */
+        /* <p data-testid="empty">Ingen tjenester</p> */}
       </section>
     </>
   )
 }
 
-// KILDE: https://www.youtube.com/watch?v=mZvKPtH9Fzo
+// KILDE filter: https://www.youtube.com/watch?v=mZvKPtH9Fzo
+
+
+
+// annen ide
+// export default function Filter( { services, getServices }) {
+//   const [searchTerm, setSearchTerm] = useState('')
+//   const [loading, setLoading] = useState(null)
+//   const [services, filterServices] = useState([])
+  
+//   //TODO: unique key
+//   useEffect(
+//   const handleFilter(services, getServices) => 
+//     {searchTerm === ''
+//     ) ? getServices : }
+//   setSearchTerm
+//   {setSearchTerm = (event?.target.value)
+//     return () => {
+//       second
+//     }
+//   }, [filterServices])
+  

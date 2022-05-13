@@ -60,7 +60,6 @@ header{
     .active-nav{
     color: black;
     text-decoration: none;
-    cursor: pointer; //Dette er standard for linker?
     
     }
 
@@ -104,7 +103,6 @@ header{
       font-size: 0.7rem;
     }
     .circles{
-      //padding: 3rem;
       margin-right: 5rem;
       height: 13rem;
       width: 13rem;
@@ -131,7 +129,7 @@ main{
   }
 
   //DET SOM STÅR UNDER GJELDER SERVICE.JS
-  .formQuote{
+  .quote{
     display:flex;
     flex-direction: column;
     gap: 1.5rem;

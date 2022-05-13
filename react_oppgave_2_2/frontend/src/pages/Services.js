@@ -11,8 +11,8 @@ export default function Services() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    setError(null)
     const getServicesData = async () => {
+      setError(null)
       setLoading(true)
       try {
         const data = await getServices()
@@ -31,10 +31,10 @@ export default function Services() {
       <h2 data-testid="title">
         <Title title="Alle tjenester" />
       </h2>
-      {!services && error ? <div>noe gikk galt...</div> : null}
-      {!services && loading ? <div>Henter service...</div> : null}
+      {!services && error ? <div>Noe gikk galt...</div> : null}
+      {!services && loading ? <div>Henter tjenester...</div> : null}
       {/* {JSON.stringify(services)} */}
-      <Filter services={services} />
+      <Filter services={services} getServices={getServices}/>
     </main>
   )
 }
@@ -42,9 +42,3 @@ export default function Services() {
 /* TODO: Skal vi flytte inn noe mer fra Filter inn hit? */
 
 /* TODO: Få filter til å virke */
-
-/* TODO: Hvis ingen tjenester ved filtrering. Vis denne */
-
-/* <p data-testid="empty">Ingen tjenester</p> */
-
-/* </section> */

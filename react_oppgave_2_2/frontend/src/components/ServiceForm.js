@@ -5,12 +5,22 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
   const [title, setTitle] = useState('')
   const [slug, setSlug] = useState('')
   const [slogan, setSlogan] = useState('')
-  const [preAmble, setPreAmble] = useState('')
+  const [preamble, setPreAmble] = useState('')
   const [box, setBox] = useState('')
   // const [formValues, setFormValues] = useState({})
 
+  /* Validate kilde: https://upmostly.com/tutorials/form-validation-using-custom-react-hooks */
   // const handleValidate = () => {
+  /*  
+    {*title} = unik
+    slug.toLowerCase() +++, unik og matcher tittel?
+    [slogan.length]>10 Characters
+    [preamble]>15char
+    [slogan]>
+    boks er valgt 
+    double check if validated by sanity?
   // }
+   TODO: VALIDATION*/
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -18,8 +28,8 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
     onSubmit({
       title,
       slug,
+      preamble,
       slogan,
-      preAmble,
       box,
     })
   }
@@ -29,17 +39,15 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
   const handleSlugChange = (event) => {
     setSlug(event.target.value)
   }
-  const handleSloganChange = (event) => {
-    setSlogan(event.target.value)
-  }
   const handlePreAmbleChange = (event) => {
     setPreAmble(event.target.value)
+  }
+  const handleSloganChange = (event) => {
+    setSlogan(event.target.value)
   }
   const handleBoxChange = (event) => {
     setBox(event.target.value)
   }
-
-  /* TODO: Gjør det mulig å sende skjema med alt av verdier */
 
   return (
     <form data-testid="form" noValidate onSubmit={handleSubmit}>
@@ -73,7 +81,7 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
           name="preAmble"
           id="preAmble"
           onChange={handlePreAmbleChange}
-          value={preAmble}
+          value={preamble}
         />
       </label>
       <label htmlFor="slogan">
@@ -110,7 +118,7 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
         {loading ? 'Lagres...' : 'Lag ny tjeneste'}
       </button>
       {/* TODO: endre utseende på knapp? Ekstra */}
-      {/* TODO: Vis riktig <p> avhengig av tilstanden */}
+      {/* TODO: Vis riktig <p> avhengig av tilstanden VALIDATE */}
       {error ? <p data-testid="form_error">Fyll ut alle felter med *</p> : null}
       {success ? <p data-testid="form_success">Skjema sendt</p> : null}
     </form>
