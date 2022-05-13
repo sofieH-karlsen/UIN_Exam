@@ -4,7 +4,6 @@
       "version": "detect"
     }
   },
-  
   "root": true,
   "extends": ["airbnb", "prettier", "plugin:jsx-a11y/recommended", "@babel/preset-env"],
   "plugins": ["html", "prettier", "react-hooks", "jsx-a11y", "@babel"],
@@ -136,4 +135,3 @@
     "jest": true
   }
 }
-
