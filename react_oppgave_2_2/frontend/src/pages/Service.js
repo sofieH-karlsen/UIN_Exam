@@ -6,8 +6,8 @@ import ViewService from '../components/ViewService'
 // TODO: kan nås med /tjenester/valgt-tjeneste
 
 export default function Service({ slug }) {
-  const [service, setService] = useState(null)
-  const [loading, setLoading] = useState(null)
+  const [service, setService] = useState([])
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -28,13 +28,16 @@ export default function Service({ slug }) {
 
   // const service = service.find((service) => service.id == id)
 
-  return service?.map((service) => (
+  
+  return (  JSON.stringify(service.slug))
+
+  (service?.map((service) => (
     <div>
       {!service && error ? <div>noe gikk galt...</div> : null}
       {!service && loading ? <div>Henter service...</div> : null}
       <ViewService service={service} />
       <ServiceBox service={service} />
     </div>
-  ))
+  )))
 }
 /* BRUKE MAP IGJEN FOR Å SKrIVE UT? */

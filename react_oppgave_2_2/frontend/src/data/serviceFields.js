@@ -12,16 +12,6 @@ const serviceFields = `
     box,
 `
 
-export const getSlug = async () => {
-  const data = await client.fetch(
-    `*[_type == "service" && slug.current == $slug]{${serviceFields}}`,
-    {
-      slug,
-    }
-  )
-  return data?.[0]
-}
-
 export const getServices = async () => {
   const data = await client.fetch(`*[_type == "service"]{${serviceFields}}`)
   return data

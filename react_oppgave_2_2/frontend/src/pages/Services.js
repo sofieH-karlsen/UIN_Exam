@@ -1,7 +1,7 @@
 // TODO: Denne egner seg for /tjenester og /
 
 import { useState, useEffect } from 'react'
-import { getServices, getSlug } from '../data/serviceFields'
+import { getServices } from '../data/serviceFields'
 import Filter from '../components/Filter'
 import Title from '../components/Title'
 import { useParams } from 'react-router-dom'
@@ -10,7 +10,7 @@ export default function Services() {
   const [services, setServices] = useState(null)
   const [loading, setLoading] = useState(null)
   const [error, setError] = useState(null)
-  const { slug } = useParams();
+  const { slug } = useParams()
   // const [boxColor, setBoxColor] = useState('white')
 
   useEffect(() => {
