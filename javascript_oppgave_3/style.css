@@ -8,7 +8,7 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
 *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
+  /* all: unset; */
   display: revert;
 }
 
@@ -96,8 +96,70 @@ meter {
   --white: #ffffff;
 }
 
+main {
+  margin: auto 5rem;
+  padding: 5rem;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+#layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-areas:
+    "nav"
+    "sections"
+    "buttons";
+}
+
+nav ul {
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+nav ul li {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--input);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+section {
+  flex-flow: column;
+  gap: 2rem;
+}
+
+label {
+  flex-basis: 1;
+  grid-area: sections;
+}
+
 input {
-  border: 1px solid var(--input-border)
+  padding: 10px;
+  margin: 1rem;
+  background-color: var(--input);
+  border: 1px solid var(--input-border);
+  border-radius: var(--box-border-width);
+  box-shadow: var(--box-shadow);
+}
+
+#next,
+#prev,
+#send,
+nav ul li {
+  border-radius: var(--box-border-width);
+  padding: 0.5rem;
+  max-width: 30%;
+}
+
+button {
+  grid-area: buttons;
 }
 
 #next {
@@ -110,4 +172,8 @@ input {
 
 #send {
   background-color: var(--blue);
+}
+
+.active {
+  background-color: var(--green);
 }

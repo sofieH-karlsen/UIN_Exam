@@ -1,3 +1,9 @@
+import { useParams } from 'react-router-dom'
+import ServiceRoutes from './routes/ServiceRoutes'
+
 export default function App() {
-  return <h1>Se i starter_files og data</h1>
+  // TODO: Legg til om nødvendig logikk her
+  const { slug } = useParams
+  return <ServiceRoutes slug={slug}/>
 }
+
