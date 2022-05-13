@@ -29,15 +29,15 @@ export default function Service({ slug }) {
   // const service = service.find((service) => service.id == id)
 
   
-  return (  JSON.stringify(service.slug))
-
-  (service?.map((service) => (
+  return (  service?.map((service) => (
     <div>
+    {JSON.stringify(service.slug)}
       {!service && error ? <div>noe gikk galt...</div> : null}
       {!service && loading ? <div>Henter service...</div> : null}
       <ViewService service={service} />
       <ServiceBox service={service} />
     </div>
   )))
+
 }
 /* BRUKE MAP IGJEN FOR Å SKrIVE UT? */
