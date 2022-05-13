@@ -1,4 +1,5 @@
 import Title from '../components/Title'
+// import { PortableText } from '@portabletext/react'
 
 export default function ViewService({ service }) {
   return (
@@ -18,9 +19,12 @@ export default function ViewService({ service }) {
       <h3 data-testid="service_content_title">{service?.initialTitle}</h3>
       {/* TODO: Bytte ut med riktig dynamisk verdi */}
       <p data-testid="service_content_text">{service?.portableText}</p>
-      <article data-testid="service_text">
+              
+      /*//TODO Portable text how to: https://www.sanity.io/docs/presenting-block-text#234900ff90d0 */
+<article data-testid="service_text">
         {/* Her kommer tekst fra "text" laget i Ny */}
-        {/*//TODO Portable text how to: https://www.sanity.io/docs/presenting-block-text#234900ff90d0 */}
+                
+        
       </article>
     </section>
   </main>
