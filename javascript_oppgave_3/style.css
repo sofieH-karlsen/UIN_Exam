@@ -94,7 +94,6 @@ meter {
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
   --background: rgb(34, 114, 139);
   --white: #ffffff;
-
 }
 
 main {
@@ -105,11 +104,11 @@ main {
   font-size: 0.8rem;
 }
 
-#layout{
+#layout {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr;  
-  grid-template-areas: 
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-areas:
     "nav"
     "sections"
     "buttons";
@@ -117,30 +116,28 @@ main {
 
 nav ul {
   grid-area: nav;
-  display:flex;
+  display: flex;
   flex-direction: row;
   gap: 0.4rem;
 }
 
-nav ul li{
+nav ul li {
   width: 2rem;
   height: 2rem;
   background-color: var(--input);
-  display:flex;
+  display: flex;
   align-content: center;
   justify-content: center;
 }
 
-section{
+section {
   flex-flow: column;
   gap: 2rem;
 }
 
-
 label {
   flex-basis: 1;
   grid-area: sections;
-
 }
 
 input {
@@ -152,17 +149,20 @@ input {
   box-shadow: var(--box-shadow);
 }
 
-#next,#prev,#send, nav ul li {
+#next,
+#prev,
+#send,
+nav ul li {
   border-radius: var(--box-border-width);
-  padding:0.5rem;
+  padding: 0.5rem;
   max-width: 30%;
 }
 
-button{
+button {
   grid-area: buttons;
 }
 
-#next{
+#next {
   background-color: var(--green);
 }
 
@@ -174,7 +174,6 @@ button{
   background-color: var(--blue);
 }
 
-
 .active {
-  background-color: var(--green);  
+  background-color: var(--green);
 }

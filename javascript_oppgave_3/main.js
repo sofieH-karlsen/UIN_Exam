@@ -148,6 +148,7 @@ const validate = () => {
     }
   }
 };
+
 const onSubmit = (event) => {
   event.preventDefault();
   validate();
@@ -157,4 +158,3 @@ nextBtn.addEventListener("click", validate);
 prevBtn.addEventListener("click", prev);
 
 form.addEventListener("submit", onSubmit);
-
