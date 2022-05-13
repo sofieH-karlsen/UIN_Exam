@@ -1,8 +1,11 @@
 import client from './client'
+import {useState} from 'react'
 
 export const createService = async (newService) => {
   const { title, slug, slogan, preamble, box } = newService
-
+  const useForm = (callback) =>{
+    const [values, setValues] = useState({})
+  }
   try {
     await client.create({
       _type: 'service',

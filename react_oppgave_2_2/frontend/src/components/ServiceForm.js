@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { hexColors } from '../data/services'
+import useForm from './Form'
 
 export default function ServiceForm({ onSubmit, loading, error, success }) {
   const [title, setTitle] = useState('')
@@ -7,7 +8,8 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
   const [slogan, setSlogan] = useState('')
   const [preamble, setPreAmble] = useState('')
   const [box, setBox] = useState('')
-  // const [formValues, setFormValues] = useState({})
+  //const [validate, setValidate] = useState('')
+  
 
   /* Validate kilde: https://upmostly.com/tutorials/form-validation-using-custom-react-hooks */
   // const handleValidate = () => {
@@ -33,6 +35,9 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
       box,
     })
   }
+
+  
+
   const handleTitleChange = (event) => {
     setTitle(event.target.value)
   }
@@ -114,13 +119,15 @@ export default function ServiceForm({ onSubmit, loading, error, success }) {
           ))}
         </select>
       </label>
-      <button data-testid="form_submit" type="submit">
+      <button data-testid="form_submit" type="submit" className="validateBtn">
         {loading ? 'Lagres...' : 'Lag ny tjeneste'}
       </button>
       {/* TODO: endre utseende på knapp? Ekstra */}
       {/* TODO: Vis riktig <p> avhengig av tilstanden VALIDATE */}
       {error ? <p data-testid="form_error">Fyll ut alle felter med *</p> : null}
       {success ? <p data-testid="form_success">Skjema sendt</p> : null}
+
     </form>
   )
-}
+  }
+

@@ -9,16 +9,18 @@ export default function Create() {
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const [validate, setValidate] = useState(false)
 
   const onSubmit = async (data) => {
     setLoading(true)
     setError(false)
     setSuccess(false)
-    // handleValidate()
+    setValidate(false)
 
     try {
       await createService(data)
       setSuccess(true)
+      setValidate(true)
       setTimeout(() => {
         navigate('/tjenester')
       }, 500)
@@ -46,6 +48,7 @@ export default function Create() {
         loading={loading}
         error={error}
         success={success}
+        validate={validate}
       />
     </main>
   )
