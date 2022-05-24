@@ -17,6 +17,7 @@ export default function Game({ game, nextLvl, setLvl }) {
     nextLvl()
     setPoints(0)
   }
+
   useEffect(() => {
     if (points >= maxPoint) {
       setHidden(false)
