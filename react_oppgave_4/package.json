@@ -34,7 +34,7 @@
     "postcss": "^8.4.8",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "styled-components": "^5.3.3",
+    "styled-components": "^6.0.7",
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
